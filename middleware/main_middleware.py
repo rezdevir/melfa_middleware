@@ -107,15 +107,17 @@ class mWindow(QMainWindow,_port_manager,_save):
           self.Line_Comment.setStyleSheet("background-color : #413f42; color:#f2f2f2")
           self.Line_Comment.editingFinished.connect(self.addComment)
           self.Line_Comment.setGeometry(30, 120, 150, 50)
-
+  
     def addComment(self):
       t=self.Line_Comment.text()
       if(t!=""):
         print ("   <== "+self.Line_Comment.text()+ " ==>\n")
+          #save to file
         self.save("   <== "+self.Line_Comment.text()+ " ==>\n")
         self.Line_Comment.clear()
       else: 
         print ("   <====>   \n")
+          #save to file
         self.save("   <====>   \n")
     def clickedr(self, qmodelindex):
       
@@ -200,9 +202,11 @@ class mWindow(QMainWindow,_port_manager,_save):
              if(self.melfa_line!="" and self.dtm_rcv):
 
               self.list_connection_command.addItem("Robot "+"-->"+self.melfa_line)
+              #save to file
               self.save("Robot "+"-->"+self.melfa_line)
              if (self.user_line!="" and self.dtu_rcv):
                self.list_connection_command.addItem("D-U "+"-->"+self.user_line)
+               #save to file
                self.save("D-U "+"-->"+self.user_line)
              time.sleep(self.timeout)
             

@@ -8,6 +8,7 @@ from threading import Thread
 import threading
 import time
 import codecs  
+import MQTT_Protocol.MqttPublisher
 def find_USB_device():
     myports = [tuple(p) for p in list(serial.tools.list_ports.comports())]
 
@@ -34,6 +35,7 @@ class _port_manager():
   writeTimeout=30
   baudrate=9600
   thread_stop=False
+  DU_Idle=True;
   # def __init__(self):
   #   #self.OnMessageArrive=Event()
     
@@ -105,12 +107,41 @@ class _port_manager():
           print(rcv_txt)
         else:
           self.melfa_line=rcv_txt
+          
           self.user_serial.write(rcv)
           print(rcv)
           
       else:
         self.dtm_rcv=False
 
+  # def thread_user_remote(self):
+  #  while True:
+   
+  #   if self.thread_stop:
+  #     #self.user_serial.close()
+  #     break
+  #   else:
+      
+  #     rcv=self.user_serial.readline()
+      
+  #     rcv_txt=rcv.decode("UTF-8") 
+  #     #Open Du Communication
+  #     if(rcv_txt==""):
+  #       DU_Idle=False
+  #     #Close Du Communication
+  #     if(rcv_txt==""):
+  #       DU_Idle=True
+  #     #rcv_txt=rcv   
+  #     #rcv_txt=codecs.decode(rcv,'UTF-8')   
+  #     if(rcv_txt!=""):
+  #       self.dtu_rcv=True
+  #       self.user_line=rcv_txt
+  #       self.melfa_serial.write(rcv)
+  #       print(rcv)
+  #     else:
+  #       self.dtu_rcv=False
+      
+#Define Direct User 
   def thread_user(self):
    while True:
    
@@ -122,6 +153,12 @@ class _port_manager():
       rcv=self.user_serial.readline()
        
       rcv_txt=rcv.decode("UTF-8") 
+      #Open Du Communication
+      if(rcv_txt==""):
+        DU_Idle=False
+      #Close Du Communication
+      if(rcv_txt==""):
+        DU_Idle=True
       #rcv_txt=rcv   
       #rcv_txt=codecs.decode(rcv,'UTF-8')   
       if(rcv_txt!=""):
