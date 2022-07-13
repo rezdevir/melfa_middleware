@@ -47,7 +47,7 @@ def publish(client,topic,msg):
 def run():
     client = connect_mqtt()
     client.loop_start()
-    publish(client,"melfarva1/Monitorcommand","Mohsen ane")
+    publish(client,"melfarv1a/Monitorcommand","Mohsen ane")
 
 
 if __name__ == '__main__':

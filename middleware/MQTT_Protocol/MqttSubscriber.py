@@ -11,7 +11,7 @@ class _Subscriber():
     broker = 'broker.emqx.io'
     port = 8083
     #topic = "python_test/mqtt"
-    topic = "melfarva1/Monitorcommand"
+    topic = "melfarv1a/Monitorcommand"
     # generate client ID with pub prefix randomly
     client_id = f'python-mqtt-{random.randint(0, 100)}'
     # client_id="clientjs"
