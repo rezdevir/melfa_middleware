@@ -1,14 +1,15 @@
 from ast import Break
-from multiprocessing import Event
+from multiprocessing import Event, Lock
 from tkinter import Y
 import serial
 import serial.tools.list_ports
 from time import sleep, perf_counter
-from threading import Thread
+from threading import Thread ,Lock
 import threading
 import time
 import codecs  
 import MQTT_Protocol.MqttPublisher
+from MQTT_Protocol.MqttSubscriber import _Subscriber as subscribe
 def find_USB_device():
     myports = [tuple(p) for p in list(serial.tools.list_ports.comports())]
 
@@ -21,23 +22,26 @@ def get_num_port():
     return  len(find_USB_device())  
 
 
-#Todo:// Make Port Allocation ........
 
-class _port_manager():
+class _port_manager(subscribe):
 #port getter and setter
   ports_user=""
   ports_melfa=""
   melfa_line=""
   user_line=""
+  Remote_user_line=""
   dtm_rcv=False
+  dtru_rcv=False
   dtu_rcv=False
-  timeout=0.05
+ 
+#Use Mutex Lock for Race Condition
+  lock=Lock()
+  timeout=0.001
   writeTimeout=30
   baudrate=9600
   thread_stop=False
-  DU_Idle=True;
-  # def __init__(self):
-  #   #self.OnMessageArrive=Event()
+  DU_Idle=True
+
     
   #melfa port
   def set_port_melfa(self,mPort):
@@ -72,8 +76,8 @@ class _port_manager():
       self.start_melfa_port()
       self.Mthread=threading.Thread(target=self.thread_melfa)
       self.Mthread.start()
-
-
+      self.RUthread=threading.Thread(target=self.thread_user_remote)
+      self.RUthread.start()
       return "Melfa port is connected"
     else: 
       #just connect both
@@ -83,6 +87,8 @@ class _port_manager():
       self.Mthread.start()
       self.Uthread=threading.Thread(target=self.thread_user)
       self.Uthread.start()
+      self.RUthread=threading.Thread(target=self.thread_user_remote)
+      self.RUthread.start()
       #start reading and writing ...
       return "Melfa and Direct-user ports are connected"
 
@@ -92,14 +98,16 @@ class _port_manager():
    
     if self.thread_stop:
       self.melfa_serial.close()
+      
       break
     else:
-      
+      self.lock.acquire()
       rcv=self.melfa_serial.readline()
       rcv_txt=rcv.decode("UTF-8") 
       #rcv_txt=rcv
       #rcv_txt=codecs.decode(rcv,'UTF-8')
       if(rcv_txt!=""):
+      
         self.dtm_rcv=True
         if(self.ports_user==""):
 
@@ -110,37 +118,26 @@ class _port_manager():
           
           self.user_serial.write(rcv)
           print(rcv)
-          
+        self.lock.release()
       else:
+       
         self.dtm_rcv=False
 
-  # def thread_user_remote(self):
-  #  while True:
-   
-  #   if self.thread_stop:
-  #     #self.user_serial.close()
-  #     break
-  #   else:
-      
-  #     rcv=self.user_serial.readline()
-      
-  #     rcv_txt=rcv.decode("UTF-8") 
-  #     #Open Du Communication
-  #     if(rcv_txt==""):
-  #       DU_Idle=False
-  #     #Close Du Communication
-  #     if(rcv_txt==""):
-  #       DU_Idle=True
-  #     #rcv_txt=rcv   
-  #     #rcv_txt=codecs.decode(rcv,'UTF-8')   
-  #     if(rcv_txt!=""):
-  #       self.dtu_rcv=True
-  #       self.user_line=rcv_txt
-  #       self.melfa_serial.write(rcv)
-  #       print(rcv)
-  #     else:
-  #       self.dtu_rcv=False
-      
+  def thread_user_remote(self):
+   client = self.connect_mqtt()
+   def on_message(client, userdata, msg):
+          # print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+          self.Remote_user_line=msg.payload.decode()
+          # self.melfa_serial.write(self.Remote_user_line)
+          self.dtru_rcv=True
+   client.subscribe(self.topic)
+   client.on_message = on_message
+   client.loop_start()
+   while True:
+    if self.thread_stop:
+      client.loop_stop()
+      break
+
 #Define Direct User 
   def thread_user(self):
    while True:
@@ -149,7 +146,7 @@ class _port_manager():
       self.user_serial.close()
       break
     else:
-      
+      self.lock.acquire()
       rcv=self.user_serial.readline()
        
       rcv_txt=rcv.decode("UTF-8") 
@@ -163,11 +160,14 @@ class _port_manager():
       #rcv_txt=codecs.decode(rcv,'UTF-8')   
       if(rcv_txt!=""):
         self.dtu_rcv=True
+       
         self.user_line=rcv_txt
         self.melfa_serial.write(rcv)
         print(rcv)
+        self.lock.release()
       else:
         self.dtu_rcv=False
+   
       
   #def port_alloc():
 

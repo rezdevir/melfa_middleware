@@ -33,12 +33,12 @@ def publish(client,topic,msg):
     msg_count = 0
     while True:
         time.sleep(1)
-        # msg = f"test: {msg_count}"
+        msgs = f"{msg}: {msg_count}"
         result = client.publish(topic, msg)
         # result: [0, 1]
         status = result[0]
         if status == 0:
-            print(f"Send `{msg}` to topic `{topic}`")
+            print(f"Send `{msgs}` to topic `{topic}`")
         else:
             print(f"Failed to send message to topic {topic}")
         msg_count += 1
@@ -47,8 +47,8 @@ def publish(client,topic,msg):
 def run():
     client = connect_mqtt()
     client.loop_start()
-    publish(client)
+    publish(client,"melfarva1/Monitorcommand","Mohsen ane")
 
 
-# if __name__ == '__main__':
-#     run()
+if __name__ == '__main__':
+    run()
