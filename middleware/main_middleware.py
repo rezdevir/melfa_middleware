@@ -115,6 +115,7 @@ class mWindow(QMainWindow,_port_manager,_save):
           #save to file
         self.save("   <== "+self.Line_Comment.text()+ " ==>\n")
         self.Line_Comment.clear()
+        
       else: 
         print ("   <====>   \n")
           #save to file
@@ -208,6 +209,12 @@ class mWindow(QMainWindow,_port_manager,_save):
                self.list_connection_command.addItem("D-U "+"-->"+self.user_line)
                #save to file
                self.save("D-U "+"-->"+self.user_line)
+             if (self.Remote_user_line!="" and self.dtru_rcv):
+               self.list_connection_command.addItem("Remote "+"-->"+self.Remote_user_line)
+               #save to file
+               self.save("Remote "+"-->"+self.Remote_user_line)
+               self.Remote_user_line=""
+
              time.sleep(self.timeout)
             
 
