@@ -161,7 +161,7 @@ class mWindow(QMainWindow,_port_manager,_save):
             self.list_portsu.setEnabled(True)
          else:
             # print (" is deselected")
-            # self.direct_user=False
+            # self.direct_user=False 
             self.list_portsu.setEnabled(False)
     def btnstart(self):
       if self.ports_melfa=="":
