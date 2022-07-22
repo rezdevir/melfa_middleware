@@ -5,7 +5,6 @@ import time
 
 from paho.mqtt import client as mqtt_client
 
-
 broker = 'broker.emqx.io'
 port = 8083
 # topic = "M2MQTT_Unity/test"
@@ -30,11 +29,10 @@ def connect_mqtt():
 
 
 def publish(client,topic,msg):
-    msg_count = 0
-    while True:
+        msg_count = 0
         time.sleep(1)
         msgs = f"{msg}: {msg_count}"
-        result = client.publish(topic, msg)
+        result = client.publish(topic, msg,)
         # result: [0, 1]
         status = result[0]
         if status == 0:
@@ -47,8 +45,17 @@ def publish(client,topic,msg):
 def run():
     client = connect_mqtt()
     client.loop_start()
-    publish(client,"melfarv1a/Monitorcommand","Mohsen ane")
-
+    service_topic= "melfa/service"
+    control_topic= "melfa/control/joint"
+    while True:
+     publish(client,control_topic,"Monitorrrr1111111111111")
+     publish(client,service_topic,"contriooioll22222222222222222222222")
+     publish(client,control_topic,"Monijiioopyhiotorrr3333333333333333333333333r")
+     publish(client,service_topic,"controioioio44444444444444444444444444444ill")
+     publish(client,control_topic,"Monitor55555555555555555555rrr")
+     publish(client,service_topic,"contriooiol666666666666666666l")
+     publish(client,control_topic,"Monijiioopyhiotorr777777777777777777777777rr")
+     publish(client,service_topic,"controioioio8888888888888888888ill")
 
 if __name__ == '__main__':
     run()

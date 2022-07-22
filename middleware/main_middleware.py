@@ -16,17 +16,18 @@ import sys
 import random
 from PySide6 import QtCore, QtWidgets, QtGui
 from PySide6.QtWidgets import *
-
+from MQTT_Protocol.mqtt_manager import mymqtt as mqtt
 #inherient from my_port_manager :Check not to take same port
 from my_port_manager import _port_manager
 import my_port_manager
 from SaveCommandManager import _save
-class mWindow(QMainWindow,_port_manager,_save):  
+class mWindow(QMainWindow,_port_manager,_save,mqtt):  
     
 
     def __init__(self):
         title="Melfa Middleware V1"
         self.flag_stop=False
+        self.flag_terminal=False
         super(mWindow,self).__init__()
 
         #Window Size Here
@@ -107,6 +108,10 @@ class mWindow(QMainWindow,_port_manager,_save):
           self.Line_Comment.setStyleSheet("background-color : #413f42; color:#f2f2f2")
           self.Line_Comment.editingFinished.connect(self.addComment)
           self.Line_Comment.setGeometry(30, 120, 150, 50)
+          #Disable Termninal CheckBox
+          self.check_terminal=QtWidgets.QCheckBox("Enable Terminal  (it cause low performance !!)",self)
+          self.check_terminal.stateChanged.connect(self.btncheck_terminal)
+          self.check_terminal.setGeometry(200, 195, 280, 30)
   
     def addComment(self):
       t=self.Line_Comment.text()
@@ -163,6 +168,18 @@ class mWindow(QMainWindow,_port_manager,_save):
             # print (" is deselected")
             # self.direct_user=False 
             self.list_portsu.setEnabled(False)
+    def btncheck_terminal(self,state):
+    
+         if state == QtCore.Qt.Checked:
+            # print (" is selected")
+            # self.direct_user=True
+            self.flag_terminal=True
+            self.terminal()
+         else:
+            # print (" is deselected")
+            # self.direct_user=False 
+            self.flag_terminal=False
+
     def btnstart(self):
       if self.ports_melfa=="":
         self.label_state.setText("First choose Robo port please!")
@@ -176,14 +193,21 @@ class mWindow(QMainWindow,_port_manager,_save):
         #make connection and do stuff ...
         self.thread_stop=False
         self.flag_stop=False
+        # start HMI terminal view
         self.terminal()
+        # start rs232 port manager
         msg=self.start_port()
+        # now it's time to start Mqtt ...
+        self.start_mqtt()
         self.label_state.setText(msg)
     def btnstop(self):
       self.thread_stop=True
       self.flag_stop=True
       ######
-
+      # if self.thread_stop:
+      #  print("flag Thread stop: True ")
+      # else:
+      #  print("flag Thread stop: False ")
       #####
       self.btn_refresh.setEnabled(True)
       self.btn_start.setEnabled(True)
@@ -197,7 +221,7 @@ class mWindow(QMainWindow,_port_manager,_save):
     def update_terminal(self):
    
         while(True):
-          if self.flag_stop:
+          if self.flag_stop or self.flag_terminal==False:
             break
           else: 
              if(self.melfa_line!="" and self.dtm_rcv):
@@ -210,9 +234,9 @@ class mWindow(QMainWindow,_port_manager,_save):
                #save to file
                self.save("D-U "+"-->"+self.user_line)
              if (self.Remote_user_line!="" and self.dtru_rcv):
-               self.list_connection_command.addItem("Remote "+"-->"+self.Remote_user_line)
+               self.list_connection_command.addItem(self.Remote_user_line)
                #save to file
-               self.save("Remote "+"-->"+self.Remote_user_line)
+               self.save(self.Remote_user_line)
                self.Remote_user_line=""
 
              time.sleep(self.timeout)

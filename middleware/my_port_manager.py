@@ -9,7 +9,7 @@ import threading
 import time
 import codecs  
 import MQTT_Protocol.MqttPublisher
-from MQTT_Protocol.MqttSubscriber import _Subscriber as subscribe
+# from MQTT_Protocol.MqttSubscriber import _Subscriber as subscribe
 def find_USB_device():
     myports = [tuple(p) for p in list(serial.tools.list_ports.comports())]
 
@@ -22,14 +22,14 @@ def get_num_port():
     return  len(find_USB_device())  
 
 
-
-class _port_manager(subscribe):
+# subscribe
+class _port_manager():
 #port getter and setter
   ports_user=""
   ports_melfa=""
   melfa_line=""
   user_line=""
-  Remote_user_line=""
+  # Remote_user_line=""
   dtm_rcv=False
   dtru_rcv=False
   dtu_rcv=False
@@ -76,8 +76,9 @@ class _port_manager(subscribe):
       self.start_melfa_port()
       self.Mthread=threading.Thread(target=self.thread_melfa)
       self.Mthread.start()
-      self.RUthread=threading.Thread(target=self.thread_user_remote)
-      self.RUthread.start()
+      # if direct user not set then remote user can control the robot
+      # self.RUthread=threading.Thread(target=self.thread_user_remote)
+      # self.RUthread.start()
       return "Melfa port is connected"
     else: 
       #just connect both
@@ -87,8 +88,6 @@ class _port_manager(subscribe):
       self.Mthread.start()
       self.Uthread=threading.Thread(target=self.thread_user)
       self.Uthread.start()
-      self.RUthread=threading.Thread(target=self.thread_user_remote)
-      self.RUthread.start()
       #start reading and writing ...
       return "Melfa and Direct-user ports are connected"
 
@@ -98,10 +97,13 @@ class _port_manager(subscribe):
    
     if self.thread_stop:
       self.melfa_serial.close()
-      
+      # print("Melfa port closed")
+      time.sleep(1)
       break
     else:
+    
       self.lock.acquire()
+      # print("Melfa port Opend")
       rcv=self.melfa_serial.readline()
       rcv_txt=rcv.decode("UTF-8") 
       #rcv_txt=rcv
@@ -118,28 +120,30 @@ class _port_manager(subscribe):
           
           self.user_serial.write(rcv)
           print(rcv)
-        self.lock.release()
+     
       else:
        
         self.dtm_rcv=False
+    self.lock.release()
 
-  def thread_user_remote(self):
-   client = self.connect_mqtt()
-   def on_message(client, userdata, msg):
-          # print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
-          self.Remote_user_line=msg.payload.decode()
-          # self.melfa_serial.write(self.Remote_user_line)
-          self.dtru_rcv=True
-   client.subscribe(self.topic)
-   client.on_message = on_message
-   client.loop_start()
-   while True:
-    if self.thread_stop:
-      client.loop_stop()
-      break
+  # def thread_user_remote(self):
+  #  client = self.connect_mqtt()
+  #  def on_message(client, userdata, msg):
+  #         # print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+  #         self.Remote_user_line=msg.payload.decode()
+  #         # self.melfa_serial.write(self.Remote_user_line)
+  #         self.dtru_rcv=True
+  #  client.subscribe(self.topic)
+  #  client.on_message = on_message
+  #  client.loop_start()
+  #  while True:
+  #   if self.thread_stop:
+  #     client.loop_stop()
+  #     break
 
 #Define Direct User 
   def thread_user(self):
+   
    while True:
    
     if self.thread_stop:
@@ -148,7 +152,7 @@ class _port_manager(subscribe):
     else:
       self.lock.acquire()
       rcv=self.user_serial.readline()
-       
+      
       rcv_txt=rcv.decode("UTF-8") 
       #Open Du Communication
       if(rcv_txt==""):
@@ -166,12 +170,23 @@ class _port_manager(subscribe):
         print(rcv)
         self.lock.release()
       else:
+        # if direct user line (serial user) empty then get melfa info
+        self.melfa_info_get()
         self.dtu_rcv=False
    
       
-  #def port_alloc():
-
-
+  # get melfa info
+  def melfa_info_get(self):
+    # Get Melfa command from csv
+    # it can be retrive it at start time for better performance
+    # save it in list
+    melfa_cmds=["cmd1","cmd2"]
+    for cmd in melfa_cmds:
+      self.melfa_serial.write(cmd)
+      sleep(self.timeout)
+      rcv=self.melfa_serial.readline()
+      # then call publish func => Publish(rcv)
+    
 
   # melfa serial port
   def start_melfa_port(self):
