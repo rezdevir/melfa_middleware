@@ -10,8 +10,6 @@ from ast import Break
 from multiprocessing import Event, Lock
 import time
 
-
-
 service_topic= "melfa/service/#"
 control_topic= "melfa/control/#"
 # 2 Topic types must be add Control and service
@@ -55,13 +53,8 @@ class message_interpreter(message):
        if self.topic[1] =="control":
             self.control_fun_switch()
        else:
-            self.monitor_fun__switch()
+            self.monitor_fun_switch()
 
-    #    if tmp_topic==topic1:
-    #         self.monitor_fun(msg)
-    #    elif tmp_topic==topic2:
-    #         self.control_fun(msg)
-   
 
    
    def control_fun_switch(self):
@@ -75,7 +68,7 @@ class message_interpreter(message):
                 # self.melfa_serial.write(self.Remote_user_line)
                 self.dtru_rcv=True
       
-   def monitor_fun__switch(self):
+   def monitor_fun_switch(self):
             try:
                 self.Remote_user_line="RU-Monitor-->"+self.topic[2]
                 # self.melfa_serial.write(self.Remote_user_line)
@@ -92,38 +85,47 @@ class mymqtt(subscribe,message_interpreter):
     Remote_user_line=""
     
     def start_mqtt(self):
+      self.client = self.connect_mqtt()
       self.RUthread_sub=threading.Thread(target=self.thread_user_remote_sub)
       self.RUthread_pub_m=threading.Thread(target=self.thread_user_remote_monitor_pub)
       self.RUthread_sub.start()
       self.RUthread_pub_m.start()
       
     def thread_user_remote_monitor_pub(self):
-        client = self.connect_mqtt()
+        if(self.melfa_monitor_line!="" and self.dtmonitor_rcv):
+            s=1 
+    def make_publish(melfa_line):
+        if "cmd1" in melfa_line:
+                s1=1
+
+
+    def publish(client,topic,msg):
+        msg_count = 0
+        time.sleep(1)
+        msgs = f"{msg}: {msg_count}"
+        result = client.publish(topic, msg,)
+        # result: [0, 1]
+        status = result[0]
+        if status == 0:
+            print(f"Send `{msgs}` to topic `{topic}`")
+        else:
+            print(f"Failed to send message to topic {topic}")
+        msg_count += 1
+
+
 
     def thread_user_remote_sub(self):
         
-        client = self.connect_mqtt()
+        
         def on_message(client, userdata, msg):
-                # print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
-            #   match msg.topic:
-            #     case topic1:
-            #       self.Remote_user_line=msg.payload.decode()+" Monitor"
-            #     # self.melfa_serial.write(self.Remote_user_line)
-            #       self.dtru_rcv=True
-            #     case topic2:
-            #       self.Remote_user_line=msg.payload.decode()+" Control"
-            #     # self.melfa_serial.write(self.Remote_user_line)
-            #       self.dtru_rcv=True
-            # print(msg.topic)
-            # self.indicator(msg)
             self.interpreter(msg)
-        client.subscribe([(service_topic,0),(control_topic,0)])
+        self.client.subscribe([(service_topic,2),(control_topic,2)])
 
-        client.on_message = on_message
-        client.loop_start()
+        self.client.on_message = on_message
+        self.client.loop_start()
         while True:
             if self.thread_stop:
-                client.loop_stop()
+                self.client.loop_stop()
                 print("Stop Mqtt Subscriber")
                 break
 

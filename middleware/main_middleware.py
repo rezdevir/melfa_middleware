@@ -171,13 +171,9 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt):
     def btncheck_terminal(self,state):
     
          if state == QtCore.Qt.Checked:
-            # print (" is selected")
-            # self.direct_user=True
             self.flag_terminal=True
             self.terminal()
          else:
-            # print (" is deselected")
-            # self.direct_user=False 
             self.flag_terminal=False
 
     def btnstart(self):
@@ -203,12 +199,6 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt):
     def btnstop(self):
       self.thread_stop=True
       self.flag_stop=True
-      ######
-      # if self.thread_stop:
-      #  print("flag Thread stop: True ")
-      # else:
-      #  print("flag Thread stop: False ")
-      #####
       self.btn_refresh.setEnabled(True)
       self.btn_start.setEnabled(True)
       self.check_user.setEnabled(True)
@@ -260,8 +250,5 @@ def window():
 
 
 
-if __name__ == "__main__":
-
-   window()
 
 

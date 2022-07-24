@@ -1,4 +1,5 @@
 from ast import Break
+from doctest import FAIL_FAST
 from multiprocessing import Event, Lock
 from tkinter import Y
 import serial
@@ -8,8 +9,7 @@ from threading import Thread ,Lock
 import threading
 import time
 import codecs  
-import MQTT_Protocol.MqttPublisher
-# from MQTT_Protocol.MqttSubscriber import _Subscriber as subscribe
+
 def find_USB_device():
     myports = [tuple(p) for p in list(serial.tools.list_ports.comports())]
 
@@ -29,11 +29,13 @@ class _port_manager():
   ports_melfa=""
   melfa_line=""
   user_line=""
+  melfa_monitor_line=""
   # Remote_user_line=""
   dtm_rcv=False
   dtru_rcv=False
   dtu_rcv=False
- 
+  dtmonitor_rcv=False
+  
 #Use Mutex Lock for Race Condition
   lock=Lock()
   timeout=0.001
@@ -94,86 +96,64 @@ class _port_manager():
 
   def thread_melfa(self):
    while True:
-   
+
     if self.thread_stop:
-      self.melfa_serial.close()
-      # print("Melfa port closed")
-      time.sleep(1)
-      break
+        self.melfa_serial.close()
+        break
     else:
     
       self.lock.acquire()
-      # print("Melfa port Opend")
       rcv=self.melfa_serial.readline()
       rcv_txt=rcv.decode("UTF-8") 
-      #rcv_txt=rcv
-      #rcv_txt=codecs.decode(rcv,'UTF-8')
       if(rcv_txt!=""):
-      
         self.dtm_rcv=True
         if(self.ports_user==""):
-
           self.melfa_line=rcv_txt
           print(rcv_txt)
         else:
           self.melfa_line=rcv_txt
-          
           self.user_serial.write(rcv)
           print(rcv)
-     
       else:
-       
         self.dtm_rcv=False
     self.lock.release()
 
-  # def thread_user_remote(self):
-  #  client = self.connect_mqtt()
-  #  def on_message(client, userdata, msg):
-  #         # print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
-  #         self.Remote_user_line=msg.payload.decode()
-  #         # self.melfa_serial.write(self.Remote_user_line)
-  #         self.dtru_rcv=True
-  #  client.subscribe(self.topic)
-  #  client.on_message = on_message
-  #  client.loop_start()
-  #  while True:
-  #   if self.thread_stop:
-  #     client.loop_stop()
-  #     break
-
 #Define Direct User 
   def thread_user(self):
-   
+   rcv_txt=""
+   rcv
+   if self.ports_user=="":
+      flag_du=False
+   else:
+      flag_du=True
    while True:
-   
     if self.thread_stop:
-      self.user_serial.close()
-      break
+       if flag_du:
+         self.user_serial.close()
+         time.sleep(1)
+         break
+       else:
+         time.sleep(1)
+         break
     else:
       self.lock.acquire()
-      rcv=self.user_serial.readline()
-      
-      rcv_txt=rcv.decode("UTF-8") 
-      #Open Du Communication
-      if(rcv_txt==""):
-        DU_Idle=False
-      #Close Du Communication
-      if(rcv_txt==""):
-        DU_Idle=True
-      #rcv_txt=rcv   
-      #rcv_txt=codecs.decode(rcv,'UTF-8')   
-      if(rcv_txt!=""):
+      if flag_du:
+        rcv=self.user_serial.readline()
+        rcv_txt=rcv.decode("UTF-8") 
+      if(rcv_txt!="" ):
         self.dtu_rcv=True
        
         self.user_line=rcv_txt
         self.melfa_serial.write(rcv)
         print(rcv)
-        self.lock.release()
+        
       else:
+        
         # if direct user line (serial user) empty then get melfa info
-        self.melfa_info_get()
+
+        # self.melfa_info_get()
         self.dtu_rcv=False
-   
+      self.lock.release()
       
   # get melfa info
   def melfa_info_get(self):
@@ -182,11 +162,46 @@ class _port_manager():
     # save it in list
     melfa_cmds=["cmd1","cmd2"]
     for cmd in melfa_cmds:
+      
       self.melfa_serial.write(cmd)
-      sleep(self.timeout)
-      rcv=self.melfa_serial.readline()
+      time.sleep(self.timeout)
+      self.melfa_monitor_line=self.melfa_serial.readline()
+      if self.melfa_monitor_line!="":
+        self.dtmonitor_rcv=True
+      else:
+        self.dtmonitor_rcv=False
       # then call publish func => Publish(rcv)
-    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   # melfa serial port
   def start_melfa_port(self):

@@ -30,9 +30,9 @@ def connect_mqtt():
 
 def publish(client,topic,msg):
         msg_count = 0
-        time.sleep(1)
+        time.sleep(0.1)
         msgs = f"{msg}: {msg_count}"
-        result = client.publish(topic, msg,)
+        result = client.publish(topic, msg,qos=2)
         # result: [0, 1]
         status = result[0]
         if status == 0:
@@ -46,12 +46,14 @@ def run():
     client = connect_mqtt()
     client.loop_start()
     service_topic= "melfa/service"
+    service_topic1= "melfa/service/baaaaaaaat"
     control_topic= "melfa/control/joint"
+    control_topic1= "melfa/control/joint2"
     while True:
      publish(client,control_topic,"Monitorrrr1111111111111")
      publish(client,service_topic,"contriooioll22222222222222222222222")
-     publish(client,control_topic,"Monijiioopyhiotorrr3333333333333333333333333r")
-     publish(client,service_topic,"controioioio44444444444444444444444444444ill")
+     publish(client,control_topic1,"Monijiioopyhiotorrr3333333333333333333333333r")
+     publish(client,service_topic1,"controioioio44444444444444444444444444444ill")
      publish(client,control_topic,"Monitor55555555555555555555rrr")
      publish(client,service_topic,"contriooiol666666666666666666l")
      publish(client,control_topic,"Monijiioopyhiotorr777777777777777777777777rr")
