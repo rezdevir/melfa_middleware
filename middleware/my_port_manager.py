@@ -148,9 +148,7 @@ class _port_manager():
         print(rcv)
         
       else:
-        
         # if direct user line (serial user) empty then get melfa info
-
         # self.melfa_info_get()
         self.dtu_rcv=False
       self.lock.release()
