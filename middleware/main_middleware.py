@@ -21,7 +21,8 @@ from MQTT_Protocol.mqtt_manager import mymqtt as mqtt
 from my_port_manager import _port_manager
 import my_port_manager
 from SaveCommandManager import _save
-class mWindow(QMainWindow,_port_manager,_save,mqtt):  
+from message_manager import message_interpreter as interpreter
+class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):  
     
 
     def __init__(self):
@@ -195,6 +196,8 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt):
         msg=self.start_port()
         # now it's time to start Mqtt ...
         self.start_mqtt()
+        # start operation
+        self.op_start()
         self.label_state.setText(msg)
     def btnstop(self):
       self.thread_stop=True
@@ -230,7 +233,35 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt):
                self.Remote_user_line=""
 
              time.sleep(self.timeout)
-            
+    def op_start(self):
+      #  self.on_Start()
+      #  print("m2r")
+       if self.ports_user=="":
+        self.du_state=False
+        operator_thread=threading.Thread(target=self.thread_op)
+        operator_thread.start()
+       else: 
+        self.du_state=True
+
+    def thread_op(self):
+      
+        while True:
+            if self.flag_stop:
+              break
+            if self.cmds !=[]:
+               if not self.du_state:
+                self.command_2_port(self.cmds)
+                self.cmds.clear()
+               else:
+                 s=1
+                #  publish cmd
+        
+                
+    def command_2_port(self,cmds):
+        for x in cmds:
+            # time.sleep(self.timeout)
+            self._melfa_port(x)
+        
 
 
 

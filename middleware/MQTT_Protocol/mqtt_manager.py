@@ -13,7 +13,7 @@ import time
 
 service_topic= "melfa/service/#"
 control_topic= "melfa/control/#"
-    
+
 
 class mymqtt(subscribe,message_interpreter):
 
@@ -34,11 +34,11 @@ class mymqtt(subscribe,message_interpreter):
                 s1=1
 
 
-    def publish(client,topic,msg):
+    def publish(client,topic,msg,qos,delay_time):
         msg_count = 0
-        time.sleep(1)
+        time.sleep(delay_time)
         msgs = f"{msg}: {msg_count}"
-        result = client.publish(topic, msg,)
+        result = client.publish(topic, msg,qos)
         # result: [0, 1]
         status = result[0]
         if status == 0:
@@ -50,10 +50,10 @@ class mymqtt(subscribe,message_interpreter):
 
 
     def thread_user_remote_sub(self):
-        
-        
+
         def on_message(client, userdata, msg):
             self.interpreter(msg)
+            
         self.client.subscribe([(service_topic,2),(control_topic,2)])
 
         self.client.on_message = on_message

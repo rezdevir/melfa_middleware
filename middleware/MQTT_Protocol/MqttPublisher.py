@@ -30,7 +30,7 @@ def connect_mqtt():
 
 def publish(client,topic,msg):
         msg_count = 0
-        time.sleep(0.1)
+        time.sleep(1)
         msgs = f"{msg}: {msg_count}"
         result = client.publish(topic, msg,qos=2)
         # result: [0, 1]

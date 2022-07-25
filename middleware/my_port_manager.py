@@ -117,6 +117,11 @@ class _port_manager():
       else:
         self.dtm_rcv=False
     self.lock.release()
+    
+    # 
+  def _melfa_port(self,cmd):
+    #  self.melfa_serial.write(cmd)
+     print(cmd)
 
 #Define Direct User 
   def thread_user(self):
