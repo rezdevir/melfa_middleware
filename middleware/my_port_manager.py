@@ -1,6 +1,7 @@
 from ast import Break
 from doctest import FAIL_FAST
 from multiprocessing import Event, Lock
+from queue import Queue 
 from tkinter import Y
 import serial
 import serial.tools.list_ports
@@ -29,17 +30,18 @@ class _port_manager():
   ports_melfa=""
   melfa_line=""
   user_line=""
-  melfa_monitor_line=""
+  # melfa_monitor_line=""
   # Remote_user_line=""
   dtm_rcv=False
   dtru_rcv=False
   dtu_rcv=False
-  dtmonitor_rcv=False
+  melfa_queue=Queue(maxsize=20)
   
 #Use Mutex Lock for Race Condition
   lock=Lock()
   timeout=0.001
   writeTimeout=30
+  MonitorTime=2
   baudrate=9600
   thread_stop=False
   DU_Idle=True
@@ -78,6 +80,8 @@ class _port_manager():
       self.start_melfa_port()
       self.Mthread=threading.Thread(target=self.thread_melfa)
       self.Mthread.start()
+      self.Monitorthread=threading.Thread(target=self.thread_melfa_info_get)
+      self.Monitorthread.start()
       # if direct user not set then remote user can control the robot
       # self.RUthread=threading.Thread(target=self.thread_user_remote)
       # self.RUthread.start()
@@ -90,6 +94,8 @@ class _port_manager():
       self.Mthread.start()
       self.Uthread=threading.Thread(target=self.thread_user)
       self.Uthread.start()
+      self.Monitorthread=threading.Thread(target=self.thread_melfa_info_get)
+      self.Monitorthread.start()
       #start reading and writing ...
       return "Melfa and Direct-user ports are connected"
 
@@ -107,7 +113,9 @@ class _port_manager():
       rcv_txt=rcv.decode("UTF-8") 
       if(rcv_txt!=""):
         self.dtm_rcv=True
+        self.melfa_queue.put(rcv)
         if(self.ports_user==""):
+          # melfa_line clear after write in terminal
           self.melfa_line=rcv_txt
           print(rcv_txt)
         else:
@@ -151,7 +159,6 @@ class _port_manager():
         self.user_line=rcv_txt
         self.melfa_serial.write(rcv)
         print(rcv)
-        
       else:
         # if direct user line (serial user) empty then get melfa info
         # self.melfa_info_get()
@@ -159,22 +166,29 @@ class _port_manager():
       self.lock.release()
       
   # get melfa info
-  def melfa_info_get(self):
+  def thread_melfa_info_get(self):
+   
+   while True:
+    if self.thread_stop:
+      break
     # Get Melfa command from csv
     # it can be retrive it at start time for better performance
     # save it in list
-    melfa_cmds=["cmd1","cmd2"]
-    for cmd in melfa_cmds:
-      
-      self.melfa_serial.write(cmd)
+    melfa_cmds_monitor=["cmd1","cmd2"]
+    for x in melfa_cmds_monitor:
+     if not self.dtu_rcv:
+      self.melfa_serial.write(x.encode("UTF-8") )
+     else:
       time.sleep(self.timeout)
-      self.melfa_monitor_line=self.melfa_serial.readline()
-      if self.melfa_monitor_line!="":
-        self.dtmonitor_rcv=True
-      else:
-        self.dtmonitor_rcv=False
+    time.sleep(self.MonitorTime)
+      # time.sleep(self.timeout)
+      # self.melfa_monitor_line=self.melfa_serial.readline()
+      # if self.melfa_monitor_line!="":
+      #   self.dtmonitor_rcv=True
+      # else:
+      #   self.dtmonitor_rcv=False
       # then call publish func => Publish(rcv)
-      
+    
 
 
 

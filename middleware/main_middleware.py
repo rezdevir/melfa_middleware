@@ -1,6 +1,7 @@
 from ast import Num
 
 from asyncio.windows_events import NULL
+from functools import cache
 from operator import itemgetter
 from tkinter import Y
 import click
@@ -67,7 +68,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           # Middleware state label
           self.label_state=QtWidgets.QLabel(self)
           self.label_state.setText("Middleware State")
-          self.label_state.setGeometry(410, 110, 300, 40)
+          self.label_state.setGeometry(410, 70, 300, 100)
           #Check state and the choose color of state 
           # Robo label
           self.label_portr=QtWidgets.QLabel(self)
@@ -178,9 +179,10 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
             self.flag_terminal=False
 
     def btnstart(self):
-      if self.ports_melfa=="":
+     msg=""
+     if self.ports_melfa=="":
         self.label_state.setText("First choose Robo port please!")
-      else:
+     else:
         #Disable all button ...
         self.btn_refresh.setEnabled(False)
         self.btn_start.setEnabled(False)
@@ -193,9 +195,16 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
         # start HMI terminal view
         self.terminal()
         # start rs232 port manager
-        msg=self.start_port()
+        try:
+         msg=msg+self.start_port()
+        except:
+         msg=msg+"Serial port ERROR!"
         # now it's time to start Mqtt ...
-        self.start_mqtt()
+        try:
+         self.start_mqtt()
+        except:
+          msg=msg+"\nMQTT Cannot Connectet to broker!"
+     
         # start operation
         self.op_start()
         self.label_state.setText(msg)
@@ -207,7 +216,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
       self.check_user.setEnabled(True)
       self.list_portsr.setEnabled(True)
       self.list_portsu.setEnabled(True)
-      
+      self.client.loop_stop()
     def terminal(self):
       thread_terminal=threading.Thread(target=self.update_terminal)
       thread_terminal.start()
@@ -222,28 +231,32 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
               self.list_connection_command.addItem("Robot "+"-->"+self.melfa_line)
               #save to file
               self.save("Robot "+"-->"+self.melfa_line)
+              self.melfa_line=""
              if (self.user_line!="" and self.dtu_rcv):
                self.list_connection_command.addItem("D-U "+"-->"+self.user_line)
                #save to file
                self.save("D-U "+"-->"+self.user_line)
+               self.user_line=""
              if (self.Remote_user_line!="" and self.dtru_rcv):
                self.list_connection_command.addItem(self.Remote_user_line)
                #save to file
                self.save(self.Remote_user_line)
                self.Remote_user_line=""
-
              time.sleep(self.timeout)
+             
     def op_start(self):
       #  self.on_Start()
       #  print("m2r")
+       monitor_operator_thread=threading.Thread(target=self.thread_monitor_pub)
+       monitor_operator_thread.start()
        if self.ports_user=="":
         self.du_state=False
-        operator_thread=threading.Thread(target=self.thread_op)
+        operator_thread=threading.Thread(target=self.thread_sub_op)
         operator_thread.start()
        else: 
         self.du_state=True
 
-    def thread_op(self):
+    def thread_sub_op(self):
       
         while True:
             if self.flag_stop:
@@ -255,7 +268,11 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
                else:
                  s=1
                 #  publish cmd
-        
+    def thread_monitor_pub(self):
+      while True:
+        if not self.melfa_queue.empty():
+          self.publish("test/t",self.melfa_queue.get(),0,1)
+          
                 
     def command_2_port(self,cmds):
         for x in cmds:
@@ -268,14 +285,11 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
 
  
 
+
 def window():
 
     app=QApplication(sys.argv)
     win=mWindow()
-    
-
-  
-
     win.show()
     sys.exit(app.exec())
 

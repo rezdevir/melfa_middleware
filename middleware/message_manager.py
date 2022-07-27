@@ -64,13 +64,13 @@ class message_interpreter(message):
              
       
    def monitor_fun_switch(self):
-            try:
+             try:
                 self.Remote_user_line="RU-Monitor-->"+self.topic[2]
                 # self.melfa_serial.write(self.Remote_user_line)
                
                 self.dtru_rcv=True
                 self.on_Start()
-            except:
+             except:
                 self.Remote_user_line="RU Topic Error"
                 # self.melfa_serial.write(self.Remote_user_line)
                 self.dtru_rcv=True

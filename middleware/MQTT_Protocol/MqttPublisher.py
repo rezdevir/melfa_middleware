@@ -1,5 +1,6 @@
 # python 3.6
 
+from queue import Queue
 import random
 import time
 
@@ -58,6 +59,19 @@ def run():
      publish(client,service_topic,"contriooiol666666666666666666l")
      publish(client,control_topic,"Monijiioopyhiotorr777777777777777777777777rr")
      publish(client,service_topic,"controioioio8888888888888888888ill")
-
+def testque():
+#   que=Queue(maxsize=20)
+  que=[]
+  que.append(1)
+  que.append(2)
+  que.append(3)
+#   while True:
+  for x in que:
+    if not que.empty():
+     print(que.pop(0))
+    else:
+     break
+    time.sleep(1)
 if __name__ == '__main__':
     run()
+    # testque()

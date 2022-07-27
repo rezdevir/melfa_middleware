@@ -20,25 +20,27 @@ class mymqtt(subscribe,message_interpreter):
     Remote_user_line=""
     
     def start_mqtt(self):
+     
       self.client = self.connect_mqtt()
-      self.RUthread_sub=threading.Thread(target=self.thread_user_remote_sub)
-      self.RUthread_pub_m=threading.Thread(target=self.thread_user_remote_monitor_pub)
-      self.RUthread_sub.start()
-      self.RUthread_pub_m.start()
-      
-    def thread_user_remote_monitor_pub(self):
-        if(self.melfa_monitor_line!="" and self.dtmonitor_rcv):
-            s=1 
-    def make_publish(melfa_line):
-        if "cmd1" in melfa_line:
-                s1=1
+      self.user_remote_sub()
+      self.client.loop_start()
+    #   self.RUthread_sub=threading.Thread(target=self.thread_user_remote_sub)
+    # #   self.RUthread_pub_m=threading.Thread(target=self.thread_user_remote_monitor_pub)
+    #   self.RUthread_sub.start()
+    #   self.RUthread_pub_m.start()
+    # def thread_user_remote_monitor_pub(self):
+    #     if(self.melfa_monitor_line!="" and self.dtmonitor_rcv):
+    #         s=1 
+    # def make_publish(melfa_line):
+    #     if "cmd1" in melfa_line:
+    #             s1=1
 
 
-    def publish(client,topic,msg,qos,delay_time):
+    def publish(self,topic,msg,qos,delay_time):
         msg_count = 0
         time.sleep(delay_time)
         msgs = f"{msg}: {msg_count}"
-        result = client.publish(topic, msg,qos)
+        result = self.client.publish(topic, msg,qos)
         # result: [0, 1]
         status = result[0]
         if status == 0:
@@ -49,7 +51,7 @@ class mymqtt(subscribe,message_interpreter):
 
 
 
-    def thread_user_remote_sub(self):
+    def user_remote_sub(self):
 
         def on_message(client, userdata, msg):
             self.interpreter(msg)
@@ -57,12 +59,12 @@ class mymqtt(subscribe,message_interpreter):
         self.client.subscribe([(service_topic,2),(control_topic,2)])
 
         self.client.on_message = on_message
-        self.client.loop_start()
-        while True:
-            if self.thread_stop:
-                self.client.loop_stop()
-                print("Stop Mqtt Subscriber")
-                break
+        
+        # while True:
+        #     if self.thread_stop:
+        #         self.client.loop_stop()
+        #         print("Stop Mqtt Subscriber")
+        #         break
 
 
 # if __name__ == '__main__':
