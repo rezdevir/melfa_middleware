@@ -54,7 +54,9 @@ class mymqtt(subscribe,message_interpreter):
     def user_remote_sub(self):
 
         def on_message(client, userdata, msg):
-            self.interpreter(msg)
+            
+           if self.interpreter(msg) == "":
+                self.publish("test/t","melfa has direct user",0,1)
             
         self.client.subscribe([(service_topic,2),(control_topic,2)])
 

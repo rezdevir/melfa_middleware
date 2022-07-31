@@ -30,23 +30,30 @@ class _port_manager():
   ports_melfa=""
   melfa_line=""
   user_line=""
+
   # melfa_monitor_line=""
   # Remote_user_line=""
   dtm_rcv=False
   dtru_rcv=False
   dtu_rcv=False
-  melfa_queue=Queue(maxsize=20)
+  from_melfa_queue=Queue(maxsize=20)
+  to_melfa_queue=Queue(maxsize=50)
   
 #Use Mutex Lock for Race Condition
   lock=Lock()
   timeout=0.001
-  writeTimeout=30
+  writeTimeout=300
   MonitorTime=2
   baudrate=9600
   thread_stop=False
   DU_Idle=True
+  remote_user_rcv=False
 
-    
+  def put_to_queue(self,msg):
+       self.to_melfa_queue.put(msg) 
+  # def put_to_melfa(self):
+  #      self.melfa_serial.write(self.put_to_melfa())
+
   #melfa port
   def set_port_melfa(self,mPort):
     return self.check_port(mPort,self.ports_user)
@@ -80,6 +87,8 @@ class _port_manager():
       self.start_melfa_port()
       self.Mthread=threading.Thread(target=self.thread_melfa)
       self.Mthread.start()
+      self.Mthread_writer=threading.Thread(target=self.thread_melfa_writer)
+      self.Mthread_writer.start()
       self.Monitorthread=threading.Thread(target=self.thread_melfa_info_get)
       self.Monitorthread.start()
       # if direct user not set then remote user can control the robot
@@ -92,6 +101,8 @@ class _port_manager():
       self.start_user_port()
       self.Mthread=threading.Thread(target=self.thread_melfa)
       self.Mthread.start()
+      self.Mthread_writer=threading.Thread(target=self.thread_melfa_writer)
+      self.Mthread_writer.start()
       self.Uthread=threading.Thread(target=self.thread_user)
       self.Uthread.start()
       self.Monitorthread=threading.Thread(target=self.thread_melfa_info_get)
@@ -104,7 +115,6 @@ class _port_manager():
    while True:
 
     if self.thread_stop:
-        self.melfa_serial.close()
         break
     else:
     
@@ -113,7 +123,7 @@ class _port_manager():
       rcv_txt=rcv.decode("UTF-8") 
       if(rcv_txt!=""):
         self.dtm_rcv=True
-        self.melfa_queue.put(rcv)
+        self.from_melfa_queue.put(rcv)
         if(self.ports_user==""):
           # melfa_line clear after write in terminal
           self.melfa_line=rcv_txt
@@ -127,9 +137,11 @@ class _port_manager():
     self.lock.release()
     
     # 
-  def _melfa_port(self,cmd):
-    #  self.melfa_serial.write(cmd)
-     print(cmd)
+  # def _melfa_port(self,cmd):
+  #   # -12345
+  #    self.melfa_serial.write(self.put_to_melfa())
+  #   #  print(cmd)1
+
 
 #Define Direct User 
   def thread_user(self):
@@ -157,7 +169,9 @@ class _port_manager():
         self.dtu_rcv=True
        
         self.user_line=rcv_txt
-        self.melfa_serial.write(rcv)
+        # write to melfa from queue -12345
+        self.to_melfa_queue.put(rcv_txt)
+        # self.melfa_serial.write(rcv)
         print(rcv)
       else:
         # if direct user line (serial user) empty then get melfa info
@@ -176,10 +190,11 @@ class _port_manager():
     # save it in list
     melfa_cmds_monitor=["cmd1","cmd2"]
     for x in melfa_cmds_monitor:
-     if not self.dtu_rcv:
-      self.melfa_serial.write(x.encode("UTF-8") )
-     else:
-      time.sleep(self.timeout)
+     if not self.dtu_rcv and not self.remote_user_rcv:
+      # time.sleep(self.writeTimeout)
+      # -12345
+      # self.melfa_serial.write(x.encode("UTF-8"))
+      self.to_melfa_queue.put(x)
     time.sleep(self.MonitorTime)
       # time.sleep(self.timeout)
       # self.melfa_monitor_line=self.melfa_serial.readline()
@@ -188,13 +203,13 @@ class _port_manager():
       # else:
       #   self.dtmonitor_rcv=False
       # then call publish func => Publish(rcv)
-    
-
-
-
-
-
-
+  def thread_melfa_writer(self):
+    while True:
+      if self.thread_stop:
+        self.melfa_serial.close()
+        break
+      if not self.to_melfa_queue.empty():
+        self.melfa_serial.write(self.to_melfa_queue.get().encode("UTF-8"))
 
 
 

@@ -48,8 +48,8 @@ def run():
     client.loop_start()
     service_topic= "melfa/service"
     service_topic1= "melfa/service/baaaaaaaat"
-    control_topic= "melfa/control/joint"
-    control_topic1= "melfa/control/joint2"
+    control_topic= "melfa/control/start"
+    control_topic1= "melfa/control/dir8"
     while True:
      publish(client,control_topic,"Monitorrrr1111111111111")
      publish(client,service_topic,"contriooioll22222222222222222222222")
@@ -72,6 +72,14 @@ def testque():
     else:
      break
     time.sleep(1)
+def test():
+        client = connect_mqtt()
+        client.loop_start()
+        control_topic= "melfa/control/start"
+        control_topic1= "melfa/control/dir8"
+        publish(client,control_topic,"Monitorrrr1111111111111")
+        publish(client,control_topic1,"Monitorrrr1111111111111")
 if __name__ == '__main__':
-    run()
+    # run()
     # testque()
+    test()

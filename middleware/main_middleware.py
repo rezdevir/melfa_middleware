@@ -1,5 +1,4 @@
 from ast import Num
-
 from asyncio.windows_events import NULL
 from functools import cache
 from operator import itemgetter
@@ -12,7 +11,6 @@ from time import sleep, perf_counter
 from threading import Thread
 import threading
 import time
-
 import sys
 import random
 from PySide6 import QtCore, QtWidgets, QtGui
@@ -28,8 +26,10 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
 
     def __init__(self):
         title="Melfa Middleware V1"
+        self.msg=""
         self.flag_stop=False
         self.flag_terminal=False
+        self.list_cmd=[]
         super(mWindow,self).__init__()
 
         #Window Size Here
@@ -38,6 +38,11 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
         # self.setGeometry(200,200,300,300)
         self.setWindowTitle(title)
         self.initUI()
+        try:
+         self.load_cmd_from_csv(r'middleware\sample1.xlsx')
+        except Exception as e:
+         print(e)
+         self.msg="csv command file not loaded\n"
     def initUI(self):
 
           lists_ports=my_port_manager.find_USB_device()
@@ -179,7 +184,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
             self.flag_terminal=False
 
     def btnstart(self):
-     msg=""
+   
      if self.ports_melfa=="":
         self.label_state.setText("First choose Robo port please!")
      else:
@@ -196,18 +201,18 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
         self.terminal()
         # start rs232 port manager
         try:
-         msg=msg+self.start_port()
+         self.msg=self.msg+self.start_port()
         except:
-         msg=msg+"Serial port ERROR!"
+         self.msg=self.msg+"Serial port ERROR!"
         # now it's time to start Mqtt ...
         try:
          self.start_mqtt()
         except:
-          msg=msg+"\nMQTT Cannot Connectet to broker!"
+         self.msg=self.msg+"\nMQTT Cannot Connectet to broker!"
      
         # start operation
         self.op_start()
-        self.label_state.setText(msg)
+        self.label_state.setText(self.msg)
     def btnstop(self):
       self.thread_stop=True
       self.flag_stop=True
@@ -216,7 +221,10 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
       self.check_user.setEnabled(True)
       self.list_portsr.setEnabled(True)
       self.list_portsu.setEnabled(True)
-      self.client.loop_stop()
+      try:
+       self.client.loop_stop()
+      except:
+       self.label_state.setText("Middleware is already closed!")
     def terminal(self):
       thread_terminal=threading.Thread(target=self.update_terminal)
       thread_terminal.start()
@@ -263,21 +271,26 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
               break
             if self.cmds !=[]:
                if not self.du_state:
+                self.remote_user_rcv=True
                 self.command_2_port(self.cmds)
+                self.remote_user_rcv=False
                 self.cmds.clear()
-               else:
-                 s=1
-                #  publish cmd
+                
+               
+             
+            
     def thread_monitor_pub(self):
       while True:
-        if not self.melfa_queue.empty():
-          self.publish("test/t",self.melfa_queue.get(),0,1)
+        if self.flag_stop:
+          break
+        if not self.from_melfa_queue.empty():
+          # extract value from melfa response ...
+          self.publish("test/t",self.from_melfa_queue.get(),0,1)
           
                 
     def command_2_port(self,cmds):
         for x in cmds:
-            # time.sleep(self.timeout)
-            self._melfa_port(x)
+            self.to_melfa_queue.put(x)
         
 
 
