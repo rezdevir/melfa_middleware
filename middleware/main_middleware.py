@@ -285,7 +285,8 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           break
         if not self.from_melfa_queue.empty():
           # extract value from melfa response ...
-          self.publish("test/t",self.from_melfa_queue.get(),0,1)
+          json_l=self.extract_cmd(self.from_melfa_queue.get().decode("UTF-8"))
+          self.publish("test/t/"+json_l[0],json_l[1],0,1)
           
                 
     def command_2_port(self,cmds):

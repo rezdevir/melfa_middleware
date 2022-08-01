@@ -80,6 +80,6 @@ def test():
         publish(client,control_topic,"Monitorrrr1111111111111")
         publish(client,control_topic1,"Monitorrrr1111111111111")
 if __name__ == '__main__':
-    # run()
+    run()
     # testque()
-    test()
+    # test()
