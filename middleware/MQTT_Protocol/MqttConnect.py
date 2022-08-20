@@ -8,8 +8,10 @@ from paho.mqtt import client as mqtt_client
 
 class _Connect():
     
-    broker = 'broker.emqx.io'
-    port = 8083
+    # broker = 'broker.emqx.io'
+    # port = 8083
+    broker='192.168.247.128'
+    port=1883
     # generate client ID with pub prefix randomly
     client_id = f'python-mqtt-{random.randint(0, 100)}'
     username = 'rezzza'
@@ -21,7 +23,7 @@ class _Connect():
         else:
             print("Failed to connect, return code %d\n", rc)
 
-     client = mqtt_client.Client(self.client_id,transport='websockets')
+     client = mqtt_client.Client(self.client_id,transport='tcp')
      client.username_pw_set(self.username, self.password)
      client.on_connect = on_connect
      client.connect(self.broker, self.port)

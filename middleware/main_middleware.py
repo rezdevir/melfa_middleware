@@ -8,7 +8,7 @@ from importlib_metadata import List
 import serial
 import serial.tools.list_ports
 from time import sleep, perf_counter
-from threading import Thread
+from threading import Thread ,Lock
 import threading
 import time
 import sys
@@ -23,7 +23,7 @@ from SaveCommandManager import _save
 from message_manager import message_interpreter as interpreter
 class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):  
     
-
+    lock_P=Lock()
     def __init__(self):
         title="Melfa Middleware V1"
         self.msg=""
@@ -31,7 +31,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
         self.flag_terminal=False
         self.list_cmd=[]
         super(mWindow,self).__init__()
-
+        
         #Window Size Here
         self.setFixedSize(640,480)
         # self.setFixedSize(320,240)
@@ -165,6 +165,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
          self.ports_user=""
          self.list_connection_command.clear()
 
+
     def btncheck(self,state):
     
          if state == QtCore.Qt.Checked:
@@ -234,12 +235,15 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           if self.flag_stop or self.flag_terminal==False:
             break
           else: 
-             if(self.melfa_line!="" and self.dtm_rcv):
-
-              self.list_connection_command.addItem("Robot "+"-->"+self.melfa_line)
+             
+             if(self.melfa_t_line!=""):
+              
+              self.list_connection_command.addItem("Robot "+"-->"+self.melfa_t_line)
               #save to file
-              self.save("Robot "+"-->"+self.melfa_line)
-              self.melfa_line=""
+              self.save("Robot "+"-->"+self.melfa_t_line)
+              self.melfa_t_line=""
+             
+              # time.sleep(self.timeout)
              if (self.user_line!="" and self.dtu_rcv):
                self.list_connection_command.addItem("D-U "+"-->"+self.user_line)
                #save to file
@@ -250,11 +254,9 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
                #save to file
                self.save(self.Remote_user_line)
                self.Remote_user_line=""
-             time.sleep(self.timeout)
+          time.sleep(self.timeout)
              
     def op_start(self):
-      #  self.on_Start()
-      #  print("m2r")
        monitor_operator_thread=threading.Thread(target=self.thread_monitor_pub)
        monitor_operator_thread.start()
        if self.ports_user=="":
@@ -283,15 +285,35 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
       while True:
         if self.flag_stop:
           break
-        if not self.from_melfa_queue.empty():
+        # time.sleep(4)
+        time.sleep(1)
+        self.lock.acquire()
+        # if  self.melfa_line!="" and  not self.dtu_rcv:
+        if not self.from_melfa_queue.empty() and not self.dtu_rcv:
           # extract value from melfa response ...
-          json_l=self.extract_cmd(self.from_melfa_queue.get().decode("UTF-8"))
-          self.publish("test/t/"+json_l[0],json_l[1],0,1)
           
+          # print(self.melfa_line)
+          tmp=self.from_melfa_queue.get()
+          print(tmp)
+          time.sleep(1)
+          # json_l=self.extract_cmd(tmp)
+
+          
+          # msg=self.melfa_line
+          # print("msg :"+msg)
+          # if not msg=="" or not msg=="QoK":
+          #  self.publish("test/t",msg,0,1)
+          #  self.melfa_line=""
+          # self.publish("test/t/"+json_l[0],json_l[1],0,1)
+          # self.melfa_line=""
+        self.lock.release()
+        # else:
+        
                 
     def command_2_port(self,cmds):
         for x in cmds:
-            self.to_melfa_queue.put(x)
+            if not self.to_melfa_queue.full():
+             self.to_melfa_queue.put(x.encode("UTF-8"))
         
 
 

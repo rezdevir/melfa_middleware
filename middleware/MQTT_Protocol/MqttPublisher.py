@@ -6,8 +6,10 @@ import time
 
 from paho.mqtt import client as mqtt_client
 
-broker = 'broker.emqx.io'
-port = 8083
+# broker = 'broker.emqx.io'
+# port = 8083
+broker='test.mosquitto.org'
+port=1883
 # topic = "M2MQTT_Unity/test"
 # topic = "rrrrwrw/sensor1"
 # generate client ID with pub prefix randomly
@@ -22,8 +24,9 @@ def connect_mqtt():
         else:
             print("Failed to connect, return code %d\n", rc)
 
-    client = mqtt_client.Client(client_id,transport='websockets')
-    client.username_pw_set(username, password)
+    # client = mqtt_client.Client(client_id,transport='websockets')
+    client = mqtt_client.Client(client_id,transport="tcp")
+    # client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.connect(broker, port)
     return client
