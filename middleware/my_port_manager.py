@@ -45,9 +45,9 @@ class _port_manager():
   lock=Lock()
   User_timeout=0.001
   timeout=0.04
-  writeTimeout=0.02
+  writeTimeout=1
   User_writeTimeout=30
-  MonitorTime=4
+  MonitorTime=10
   starter=10
   baudrate=9600
   thread_stop=False
@@ -124,7 +124,7 @@ class _port_manager():
       
       # self.lock.release()
       if(rcv_txt!=""):
-        print(rcv)
+        # print(rcv)
         if(self.ports_user==""):
           self.dtm_rcv=True
 
@@ -196,11 +196,13 @@ class _port_manager():
      else: 
       # Remote User
          if not self.to_melfa_queue.empty():
-              rcv=self.to_melfa_queue.get()
+              rcvv=self.to_melfa_queue.get()
               self.dtu_rcv=True
         # Write it On Melfa line
-              self.user_line=rcv_txt
-              self.melfa_serial.write(rcv)
+              self.user_line=rcv_txt  
+              self.melfa_serial.write(rcvv.encode("UTF-8"))
+              # print(rcvv.encode("UTF-8"))
+              # time.sleep(0.001)
               self.dtu_rcv=False
          else:
             if self.is_monitor:

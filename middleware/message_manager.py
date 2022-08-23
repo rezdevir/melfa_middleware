@@ -97,7 +97,9 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
 
    def interpreter(self,msg):
     if not self.du_state:
+   
        tmp_topic=msg.topic
+       self.payload=msg.payload.decode("utf-8")
     #    tmp_topic=msg
        self.str_topic=tmp_topic
        indexer=0
@@ -111,9 +113,12 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
          self.topic.append(tmp_topic[indexer:i])
          indexer=i+1
     #    print(self.topic)
-       self.dispatch()
-       self.clear_message()
-       return "ok"
+       if self.topic[2]!="testsv":
+        self.dispatch()
+        self.clear_message()
+        return "ok"
+       else:
+        return "testsv"
     else:
       #   self.cmds=["middleware","error","1","Direct user detected"]
        return ""
@@ -172,7 +177,12 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
              tmp=x.get_cmd(self.topic[2])
              if(tmp!=""):
                  # print (tmp)
-                 tmpcmd.append(tmp)
+                # if(tmp!="test"):
+
+                 if(tmp=="1;1;OVRD="):
+                  tmpcmd.append(tmp+self.payload+"\r")
+                 else:
+                  tmpcmd.append(tmp+"\r")
                  
         return tmpcmd
 
@@ -273,7 +283,7 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
         return tmp_l
     else:
         tmp_l=[]
-        tmp_l.append("errmiddleware")
+        tmp_l.append("middleware")
         tmp_l.append('{"state":"error"}')
         return tmp_l
    #  print (" \nPPOSF X is :"+str(pp.getx()))

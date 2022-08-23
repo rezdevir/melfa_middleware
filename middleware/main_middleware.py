@@ -39,7 +39,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
         self.setWindowTitle(title)
         self.initUI()
         try:
-         self.load_cmd_from_csv(r'middleware\sample1.xlsx')
+         self.load_cmd_from_csv(r'middleware\sample.xlsx')
         except Exception as e:
          print(e)
          self.msg="csv command file not loaded\n"
@@ -244,7 +244,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
               self.melfa_t_line=""
              
               # time.sleep(self.timeout)
-             if (self.user_line!="" and self.dtu_rcv):
+             if (self.user_line!=""):
                self.list_connection_command.addItem("D-U "+"-->"+self.user_line)
                #save to file
                self.save("D-U "+"-->"+self.user_line)
@@ -278,7 +278,14 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
                 self.remote_user_rcv=False
                 self.cmds.clear()
                 
-               
+    def command_2_port(self,cmds):
+        for x in cmds:
+            if not self.to_melfa_queue.full():
+             self.to_melfa_queue.put(x)
+        
+
+
+             
              
             
     def thread_monitor_pub(self):
@@ -294,29 +301,22 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           
           # print(self.melfa_line)
           tmp=self.from_melfa_queue.get()
-          print(tmp)
-          time.sleep(1)
-          # json_l=self.extract_cmd(tmp)
+          # print(tmp)
+          # time.sleep(1)
+          json_l=self.extract_cmd(tmp)
 
           
           # msg=self.melfa_line
           # print("msg :"+msg)
-          # if not msg=="" or not msg=="QoK":
-          #  self.publish("test/t",msg,0,1)
-          #  self.melfa_line=""
-          # self.publish("test/t/"+json_l[0],json_l[1],0,1)
+          if not tmp=="QoK":
+           self.publish("melfa/monitor/"+json_l[0],json_l[1],0,1)
+           self.melfa_line=""
+          
           # self.melfa_line=""
         self.lock.release()
         # else:
         
                 
-    def command_2_port(self,cmds):
-        for x in cmds:
-            if not self.to_melfa_queue.full():
-             self.to_melfa_queue.put(x.encode("UTF-8"))
-        
-
-
 
 
  
