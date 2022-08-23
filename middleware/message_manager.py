@@ -113,12 +113,13 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
          self.topic.append(tmp_topic[indexer:i])
          indexer=i+1
     #    print(self.topic)
-       if self.topic[2]!="testsv":
-        self.dispatch()
-        self.clear_message()
-        return "ok"
-       else:
-        return "testsv"
+      #  if self.topic[2]!="testsv":
+       self.dispatch()
+       self.clear_message()
+       return "ok"
+      #  else:
+      #   self.clear_message()
+      #   return "testsv"
     else:
       #   self.cmds=["middleware","error","1","Direct user detected"]
        return ""
@@ -174,14 +175,11 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
    def topic_to_cmds(self):
         tmpcmd=[]
         for x in self.list_cmds:
-             tmp=x.get_cmd(self.topic[2])
-             if(tmp!=""):
-                 # print (tmp)
-                # if(tmp!="test"):
-
-                 if(tmp=="1;1;OVRD="):
+            tmp=x.get_cmd(self.topic[2])
+            if tmp!="":
+             if(tmp=="1;1;OVRD="):
                   tmpcmd.append(tmp+self.payload+"\r")
-                 else:
+             else:
                   tmpcmd.append(tmp+"\r")
                  
         return tmpcmd
@@ -213,11 +211,11 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
       # print(y)
     al=re.findall("A;(\\d.*?);", tmp_cmd_monitor)
     if al!=[]:
-      try:
+      # try:
         a=float(al[0])
       # PPOSF(y)
-      except:
-        a=NULL
+      # except:
+      #   a=NULL
       # print(y)
     bl=re.findall("B;(\\d.*?);", tmp_cmd_monitor)
     if bl!=[]:

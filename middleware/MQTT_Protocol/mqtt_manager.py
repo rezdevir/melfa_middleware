@@ -54,12 +54,17 @@ class mymqtt(subscribe,message_interpreter):
     def user_remote_sub(self):
 
         def on_message(client, userdata, msg):
-           tmpMSG= self.interpreter(msg)
-           if tmpMSG == "":
+          if msg.topic=="melfa/control/testsv":
+            if not self.du_state:
+             self.publish("melfa/message","Melfa is Online",0,1)
+            else:
+             self.publish("melfa/message","melfa has direct user",0,1)
+          else:
+           self.interpreter(msg)
+          
                 
-                self.publish("melfa/message","melfa has direct user",0,1)
-           elif tmpMSG=="testsv":
-                self.publish("melfa/message","Melfa is Online",0,1)
+        #    elif tmpMSG=="testsv":
+        #         self.publish("melfa/message","Melfa is Online",0,1)
            
             
         self.client.subscribe([(service_topic,2),(control_topic,2)])

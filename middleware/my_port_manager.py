@@ -32,7 +32,9 @@ class _port_manager():
   user_line=""
   to_melfa=""
   melfa_t_line=""
-  melfa_cmds_monitor=["1;1;STATE\r","1;1;ERRORRD<;0\r"]
+  # ,"1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"
+  melfa_cmds_monitor=["1;1;STATE\r","1;1;ERRORRD<;0\r","1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"]
+  melfa_cmds_pos_monitor=["1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"]
   # Remote_user_line=""
   dtm_rcv=False
   dtru_rcv=False
@@ -47,7 +49,7 @@ class _port_manager():
   timeout=0.04
   writeTimeout=1
   User_writeTimeout=30
-  MonitorTime=10
+  MonitorTime=5
   starter=10
   baudrate=9600
   thread_stop=False
@@ -124,7 +126,7 @@ class _port_manager():
       
       # self.lock.release()
       if(rcv_txt!=""):
-        # print(rcv)
+        print(rcv)
         if(self.ports_user==""):
           self.dtm_rcv=True
 
@@ -134,6 +136,7 @@ class _port_manager():
           
           self.from_melfa_queue.put(rcv.decode("UTF-8"))
           self.melfa_t_line=rcv_txt
+          # print("IN REMOTE"+rcv)
           # self.lock.release()
           # self.melfa_t_line=rcv.decode("UTF-8")
           # print(rcv_txt)
@@ -145,6 +148,7 @@ class _port_manager():
           self.from_melfa_queue.put(rcv.decode("UTF-8"))
           self.user_serial.write(rcv)
           self.melfa_t_line=rcv_txt
+          
           # self.lock.release()
           # self.melfa_t_line=rcv.decode("UTF-8")
           self.dtm_rcv=False
@@ -190,6 +194,7 @@ class _port_manager():
          self.is_monitor=False
          for x in self.melfa_cmds_monitor:
            self.melfa_serial.write(x.encode("UTF-8"))
+       
          
        
         
@@ -201,20 +206,23 @@ class _port_manager():
         # Write it On Melfa line
               self.user_line=rcv_txt  
               self.melfa_serial.write(rcvv.encode("UTF-8"))
-              # print(rcvv.encode("UTF-8"))
-              # time.sleep(0.001)
+              print(rcvv.encode("UTF-8"))
+              # time.sleep(0.005)
               self.dtu_rcv=False
          else:
             if self.is_monitor:
+               self.is_monitor=False
                self.Monitor_operation()
-            self.dtu_rcv=False
-
+            # self.dtu_rcv=False
+         
+       
 
   def Monitor_operation(self):
         
          for x in self.melfa_cmds_monitor:
-           self.melfa_serial.write(x.encode("UTF-8"))
-         self.is_monitor=False
+          self.to_melfa_queue.put(x)
+          #  self.melfa_serial.write(x.encode("UTF-8"))
+         
        
          
 
