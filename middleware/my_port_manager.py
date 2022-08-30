@@ -33,7 +33,8 @@ class _port_manager():
   to_melfa=""
   melfa_t_line=""
   # ,"1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"
-  melfa_cmds_monitor=["1;1;STATE\r","1;1;ERRORRD<;0\r","1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"]
+  melfa_cmds_monitor=["1;1;STATE\r","1;-1;PPOSF\r","1;1;ERRORRD<;0\r","1;-1;JPOSF\r","1;1;ERRORRD<;0\r","1;-1;GPPOSF\r","1;1;ERRORRD<;0\r","1;-1;GJPOSF\r","1;1;ERRORRD<;0\r"]
+  melfa_MonitorCommand="1;1;STATE\r"
   melfa_cmds_pos_monitor=["1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"]
   # Remote_user_line=""
   dtm_rcv=False
@@ -55,7 +56,7 @@ class _port_manager():
   thread_stop=False
   DU_Idle=True
   remote_user_rcv=False
-
+  counter_m=0
   def put_to_queue(self,msg):
        self.to_melfa_queue.put(msg) 
   # def put_to_melfa(self):
@@ -96,8 +97,10 @@ class _port_manager():
       self.Mthread.start()
       self.Uthread=threading.Thread(target=self.thread_user)
       self.Uthread.start()
-      self.Mthread_delay=threading.Thread(target=self.thread_delay_monitor)
-      self.Mthread_delay.start()
+      # self.Mthread_delay=threading.Thread(target=self.thread_delay_monitor)
+      # self.Mthread_delay.start()
+      self.Mthread_Ch_delay=threading.Thread(target=self.thread_Remote_monitor)
+      self.Mthread_Ch_delay.start()
       return "Melfa port is connected"
     else: 
       #just connect both
@@ -122,24 +125,26 @@ class _port_manager():
     
       # self.lock.acquire()
       rcv=self.melfa_serial.readline()
+      # rcv=self.melfa_serial.read_all()
+      # rcv=self.melfa_serial.read_until()
+      # rcv=self.melfa_serial.read(8)
       rcv_txt=rcv.decode("UTF-8") 
-      
+      # print(rcv)
       # self.lock.release()
       if(rcv_txt!=""):
         print(rcv)
         if(self.ports_user==""):
           self.dtm_rcv=True
 
-          # melfa_line clear after write in terminal
           # self.lock.acquire()
           self.melfa_line=rcv.decode("UTF-8")
-          
           self.from_melfa_queue.put(rcv.decode("UTF-8"))
+          # print(rcv_txt)
+          # self.user_serial.write(rcv)
           self.melfa_t_line=rcv_txt
-          # print("IN REMOTE"+rcv)
           # self.lock.release()
           # self.melfa_t_line=rcv.decode("UTF-8")
-          # print(rcv_txt)
+          self.dtm_rcv=False
         else:
           self.dtm_rcv=True
 
@@ -194,46 +199,82 @@ class _port_manager():
          self.is_monitor=False
          for x in self.melfa_cmds_monitor:
            self.melfa_serial.write(x.encode("UTF-8"))
-       
-         
-       
-        
+    
      else: 
       # Remote User
-         if not self.to_melfa_queue.empty():
+         time.sleep(self.User_timeout)
+         if not self.to_melfa_queue.empty() :
               rcvv=self.to_melfa_queue.get()
-              self.dtu_rcv=True
+              self.dtru_rcv=True
         # Write it On Melfa line
               self.user_line=rcv_txt  
               self.melfa_serial.write(rcvv.encode("UTF-8"))
-              print(rcvv.encode("UTF-8"))
+              # print("In if:")
+              # print(rcvv.encode("UTF-8"))
               # time.sleep(0.005)
-              self.dtu_rcv=False
+              self.dtru_rcv=False
          else:
-            if self.is_monitor:
-               self.is_monitor=False
-               self.Monitor_operation()
-            # self.dtu_rcv=False
-         
-       
+          #  time.sleep(self.timeout)
+           if self.is_monitor:
+            self.is_monitor=False
+            self.melfa_serial.write(self.melfa_MonitorCommand.encode("UTF-8"))
+            # for x in self.melfa_cmds_monitor:
+            #   print("In Monitor:" + x)
+            #   # time.sleep(self.timeout)
+            #   self.melfa_serial.write(x.encode("UTF-8"))
 
-  def Monitor_operation(self):
+              
+            # if self.is_monitor:
+            #   #  self.is_monitor=False
+            #   #  self.Monitor_operation()
+            #   self.is_monitor=False
+            #   for x in self.melfa_cmds_monitor:
+            #     # if(self.dtu_rcv):
+            #     #   break
+            #   # print("In Monitor:" + self.melfa_MonitorCommand)
+            #     self.melfa_serial.write(x.encode("UTF-8"))
+            #   # self.melfa_serial.write(self.melfa_MonitorCommand.encode("UTF-8"))
+            #     # time.sleep(2)
+            # # self.dtu_rcv=False
+         
+
+  # def Monitor_operation(self):
         
-         for x in self.melfa_cmds_monitor:
-          self.to_melfa_queue.put(x)
-          #  self.melfa_serial.write(x.encode("UTF-8"))
+  #        for x in self.melfa_cmds_monitor:
+  #         self.to_melfa_queue.put(x)
+  #         #  self.melfa_serial.write(x.encode("UTF-8"))
          
        
-         
+                  
+  def thread_Remote_monitor(self):
+    time.sleep(self.starter)
+    while True:
+      if self.thread_stop:
+        break
+      for x in self.melfa_cmds_monitor:
+          if not self.is_monitor:
+           if self.dtru_rcv:
+            time.sleep(2.5)
+           self.melfa_MonitorCommand=x
+           self.is_monitor=True 
+           if x=="1;1;ERRORRD<;0\r":
+            time.sleep(2.5)
+           else:
+            time.sleep(3)
+
 
          
   def thread_delay_monitor(self):
+    # time.sleep(self.starter)
     while True:
       if self.thread_stop:
         break
       time.sleep(self.MonitorTime) 
+      # for x in self.melfa_cmds_monitor:
+      #   self.melfa_MonitorCommand=x
+      #   time.sleep(1) 
       if not self.is_monitor and not self.dtu_rcv:
-        self.is_monitor=True
+          self.is_monitor=True
 
   # def thread_delay_monitor(self):
   #   while True:

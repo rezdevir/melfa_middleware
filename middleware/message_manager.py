@@ -177,14 +177,37 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
         for x in self.list_cmds:
             tmp=x.get_cmd(self.topic[2])
             if tmp!="":
-             if(tmp=="1;1;OVRD="):
-                  tmpcmd.append(tmp+self.payload+"\r")
+             if(tmp=="testprgrm:="):
+                  tmpcmd= self.program2code(self.topic[3],self.payload)
+                    # tmpcmd.append(tmp+self.topic[3]+self.payload+"\r")
+                    # print(self.topic[3])
              else:
+              if(tmp=="1;1;OVRD="):
+                  tmpcmd.append(tmp+self.payload+"\r")
+              else:
                   tmpcmd.append(tmp+"\r")
                  
         return tmpcmd
 
-
+   def program2code(self,name,code):
+    tmpcmd=[]
+    c=1
+    command=["1;0;JOGST\r","1;1;CNTLON\r","1;1;SLOTINIT\r","1;1;CNTLOFF\r","1;1;NEW\r","1;1;ECLR\r","1;1;LOAD="+name+'\r',"1;1;ECLR\r","1;1;PRTVERVALS\r"]
+    for x in command:
+      tmpcmd.append(x)
+    # newcode=code.replace("\n", "")
+    # codes=""
+    for line in code.splitlines():
+    #  print(str(c)+":"+line)
+    #  print(line)
+     line=line.replace("\r\n","")
+     if(line!=""):
+      if(c==1):
+       tmpcmd.append("1;1;EDATA "+str(c)+" "+line+" 'LNADDED\r")
+      else:
+       tmpcmd.append("1;1;EDATA "+str(c)+" "+line+"\r")
+      c=c+1
+    return tmpcmd
    def extract_cmd(self,tmp_cmd_monitor):
     x=y=z=a=b=c=j1=j2=j3=j4=j5=j6=NULL
     state=re.findall("Qo[kK]?", tmp_cmd_monitor)
@@ -192,7 +215,8 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
         state=state[0]
       #   print(state)
       # PPOSF(state)
-
+    setOrgin1=tmp_cmd_monitor.find("X;****;")
+    setOrgin2=tmp_cmd_monitor.find("J1;****;")
     xl=re.findall("X;(\\d.*?);", tmp_cmd_monitor)
     if xl!=[]:
       x=float(xl[0])
@@ -211,11 +235,11 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
       # print(y)
     al=re.findall("A;(\\d.*?);", tmp_cmd_monitor)
     if al!=[]:
-      # try:
+      try:
         a=float(al[0])
       # PPOSF(y)
-      # except:
-      #   a=NULL
+      except:
+        a=NULL
       # print(y)
     bl=re.findall("B;(\\d.*?);", tmp_cmd_monitor)
     if bl!=[]:
@@ -269,7 +293,12 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
     # print (" \nJPOSF  is :"+str(jj.getJson()))
     # print (" \nPPOSF  is :"+str(pp.isEmpty_()))
     # print (" \nJPOSF  is :"+str(jj.isEmpty_()))
-    if not pp.isEmpty_() :
+    if setOrgin1 !=-1 or setOrgin2 !=-1 :
+        tmp_l=[]
+        tmp_l.append("message")
+        tmp_l.append('{"state":"Please Set Orgin"}')
+        return tmp_l
+    elif not pp.isEmpty_() :
         tmp_l=[]
         tmp_l.append(pp.type)
         tmp_l.append(pp.getJson())
@@ -278,12 +307,21 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
         tmp_l=[]
         tmp_l.append(jj.type)
         tmp_l.append(jj.getJson())
+        return tmp_l  
+    elif state.find("QoK")!=-1:
+        tmp_l=[]
+        tmp_l.append("message/state")
+        tmp_l.append('{"state":"OK","data":{"data":"'+tmp_cmd_monitor.replace('\r',"")+'"}}')
         return tmp_l
     else:
         tmp_l=[]
-        tmp_l.append("middleware")
-        tmp_l.append('{"state":"error"}')
+        tmp_l.append("message")
+        tmp_l.append('{"state":"error","data":{"data":""}}')
         return tmp_l
+
+
+
+  
    #  print (" \nPPOSF X is :"+str(pp.getx()))
    #  print (" \nJPOSF J1 is :"+str(jj.getj1()))
 

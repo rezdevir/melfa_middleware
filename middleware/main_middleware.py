@@ -294,26 +294,25 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           break
         # time.sleep(4)
         time.sleep(1)
-        self.lock.acquire()
+        # self.lock.acquire()
         # if  self.melfa_line!="" and  not self.dtu_rcv:
         if not self.from_melfa_queue.empty() and not self.dtu_rcv:
           # extract value from melfa response ...
           
           # print(self.melfa_line)
           tmp=self.from_melfa_queue.get()
-          # print(tmp)
+          
           # time.sleep(1)
           json_l=self.extract_cmd(tmp)
-
-          
           # msg=self.melfa_line
           # print("msg :"+msg)
           if not tmp=="QoK":
            self.publish("melfa/monitor/"+json_l[0],json_l[1],0,1)
            self.melfa_line=""
+           
           
           # self.melfa_line=""
-        self.lock.release()
+        # self.lock.release()
         # else:
         
                 

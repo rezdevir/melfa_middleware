@@ -56,9 +56,9 @@ class mymqtt(subscribe,message_interpreter):
         def on_message(client, userdata, msg):
           if msg.topic=="melfa/control/testsv":
             if not self.du_state:
-             self.publish("melfa/message","Melfa is Online",0,1)
+             self.publish("melfa/message/middleware","Melfa is Online",0,1)
             else:
-             self.publish("melfa/message","melfa has direct user",0,1)
+             self.publish("melfa/message/middleware","melfa has direct user",0,1)
           else:
            self.interpreter(msg)
           
