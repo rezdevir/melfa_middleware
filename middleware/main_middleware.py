@@ -296,7 +296,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
         time.sleep(1)
         # self.lock.acquire()
         # if  self.melfa_line!="" and  not self.dtu_rcv:
-        if not self.from_melfa_queue.empty() and not self.dtu_rcv:
+        if not self.from_melfa_queue.empty() :
           # extract value from melfa response ...
           
           # print(self.melfa_line)

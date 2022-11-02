@@ -217,23 +217,23 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
       # PPOSF(state)
     setOrgin1=tmp_cmd_monitor.find("X;****;")
     setOrgin2=tmp_cmd_monitor.find("J1;****;")
-    xl=re.findall("X;(\\d.*?);", tmp_cmd_monitor)
+    xl=re.findall("X;([-]?\\d.*?);", tmp_cmd_monitor)
     if xl!=[]:
       x=float(xl[0])
       # PPOSF(x)
       # print(x)
 
-    yl=re.findall("Y;(\\d.*?);", tmp_cmd_monitor)
+    yl=re.findall("Y;([-]?\\d.*?);", tmp_cmd_monitor)
     if yl!=[]:
       y=float(yl[0])
       # PPOSF(y)
       # print(y)
-    zl=re.findall("Z;(\\d.*?);", tmp_cmd_monitor)
+    zl=re.findall("Z;([-]?\\d.*?);", tmp_cmd_monitor)
     if zl!=[]:
       z=float(zl[0])
       # PPOSF(y)
       # print(y)
-    al=re.findall("A;(\\d.*?);", tmp_cmd_monitor)
+    al=re.findall("A;([-]?\\d.*?);", tmp_cmd_monitor)
     if al!=[]:
       try:
         a=float(al[0])
@@ -241,47 +241,47 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
       except:
         a=NULL
       # print(y)
-    bl=re.findall("B;(\\d.*?);", tmp_cmd_monitor)
+    bl=re.findall("B;([-]?\\d.*?);", tmp_cmd_monitor)
     if bl!=[]:
       b=float(bl[0])
       # PPOSF(y)
       # print(y)
-    cl=re.findall("C;(\\d.*?);", tmp_cmd_monitor)
+    cl=re.findall("C;([-]?\\d.*?);", tmp_cmd_monitor)
     if cl!=[]:
        c=float(cl[0])
       # PPOSF(c)
       #  print(c)
 
-    j1l=re.findall("J1;(\\d.*?);", tmp_cmd_monitor)
+    j1l=re.findall("J1;([-]?\\d.*?);", tmp_cmd_monitor)
     if j1l!=[]:
        j1=float(j1l[0])
        # JPOSF(j1)
       #  print(j1)
 
-    j2l=re.findall("J2;(\\d.*?);", tmp_cmd_monitor)
+    j2l=re.findall("J2;([-]?\\d.*?);", tmp_cmd_monitor)
     if j2l!=[]:
        j2=float(j2l[0])
        # JPOSF(j2)
       #  print(j2)
 
-    j3l=re.findall("J3;(\\d.*?);", tmp_cmd_monitor)
+    j3l=re.findall("J3;([-]?\\d.*?);", tmp_cmd_monitor)
     if j3l!=[]:
        j3=float(j3l[0])
     # JPOSF(j3)
       #  print(j3)
 
-    j4l=re.findall("J4;(\\d.*?);", tmp_cmd_monitor)
+    j4l=re.findall("J4;([-]?\\d.*?);", tmp_cmd_monitor)
     if j4l!=[]:
        j4=float(j4l[0])
     # JPOSF(j3)
       #  print(j3)
 
-    j5l=re.findall("J5;(\\d.*?);", tmp_cmd_monitor)
+    j5l=re.findall("J5;([-]?\\d.*?);", tmp_cmd_monitor)
     if j5l!=[]:
        j5=float(j5l[0])
     # JPOSF(j3)
       #  print(j3)
-    j6l=re.findall("J6;(\\d.*?);", tmp_cmd_monitor)
+    j6l=re.findall("J6;([-]?\\d.*?);", tmp_cmd_monitor)
     if j6l!=[]:
        j6=float(j6l[0])
     # JPOSF(j3)

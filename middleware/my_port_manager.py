@@ -33,9 +33,10 @@ class _port_manager():
   to_melfa=""
   melfa_t_line=""
   # ,"1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"
-  melfa_cmds_monitor=["1;1;STATE\r","1;-1;PPOSF\r","1;1;ERRORRD<;0\r","1;-1;JPOSF\r","1;1;ERRORRD<;0\r","1;-1;GPPOSF\r","1;1;ERRORRD<;0\r","1;-1;GJPOSF\r","1;1;ERRORRD<;0\r"]
+  melfa_cmds_monitor=["1;1;STATE\r","1;-1;PPOSF\r","1;1;ERRORRD<;0\r","1;-1;JPOSF\r",]
+  # melfa_cmds_monitor=["1;1;STATE\r","1;-1;PPOSF\r","1;1;ERRORRD<;0\r","1;-1;JPOSF\r","1;1;ERRORRD<;0\r","1;-1;GPPOSF\r","1;1;ERRORRD<;0\r","1;-1;GJPOSF\r","1;1;ERRORRD<;0\r"]
   melfa_MonitorCommand="1;1;STATE\r"
-  melfa_cmds_pos_monitor=["1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"]
+  # melfa_cmds_pos_monitor=["1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"]
   # Remote_user_line=""
   dtm_rcv=False
   dtru_rcv=False
@@ -51,7 +52,7 @@ class _port_manager():
   writeTimeout=1
   User_writeTimeout=30
   MonitorTime=5
-  starter=10
+  starter=8
   baudrate=9600
   thread_stop=False
   DU_Idle=True
@@ -256,6 +257,7 @@ class _port_manager():
            if self.dtru_rcv:
             time.sleep(2.5)
            self.melfa_MonitorCommand=x
+           print(x)
            self.is_monitor=True 
            if x=="1;1;ERRORRD<;0\r":
             time.sleep(2.5)
