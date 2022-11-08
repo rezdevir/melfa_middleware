@@ -289,11 +289,12 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
              
             
     def thread_monitor_pub(self):
+      last_msg=""
       while True:
         if self.flag_stop:
           break
         # time.sleep(4)
-        time.sleep(1)
+        time.sleep(0.04)
         # self.lock.acquire()
         # if  self.melfa_line!="" and  not self.dtu_rcv:
         if not self.from_melfa_queue.empty() :
@@ -304,11 +305,13 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           
           # time.sleep(1)
           json_l=self.extract_cmd(tmp)
+          if(json_l[1]!=last_msg):
+           last_msg=json_l[1]
           # msg=self.melfa_line
           # print("msg :"+msg)
-          if not tmp=="QoK":
-           self.publish("melfa/monitor/"+json_l[0],json_l[1],0,1)
-           self.melfa_line=""
+           if json_l[0]=="JPOSF":
+             self.publish("melfa/monitor/"+json_l[0],json_l[1],0,0.04)
+             self.melfa_line=""
            
           
           # self.melfa_line=""

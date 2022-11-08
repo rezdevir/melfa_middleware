@@ -213,6 +213,7 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
     state=re.findall("Qo[kK]?", tmp_cmd_monitor)
     if state!=[]:
         state=state[0]
+
       #   print(state)
       # PPOSF(state)
     setOrgin1=tmp_cmd_monitor.find("X;****;")
@@ -308,15 +309,15 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
         tmp_l.append(jj.type)
         tmp_l.append(jj.getJson())
         return tmp_l  
-    elif state.find("QoK")!=-1:
-        tmp_l=[]
-        tmp_l.append("message/state")
-        tmp_l.append('{"state":"OK","data":{"data":"'+tmp_cmd_monitor.replace('\r',"")+'"}}')
-        return tmp_l
+    # elif state.find("QoK")!=-1:
+    #     tmp_l=[]
+    #     tmp_l.append("message/state")
+    #     tmp_l.append('{"state":"OK","data":{"data":"'+tmp_cmd_monitor.replace('\r',"")+'"}}')
+    #     return tmp_l
     else:
         tmp_l=[]
         tmp_l.append("message")
-        tmp_l.append('{"state":"error","data":{"data":""}}')
+        tmp_l.append('{"state":"Unknown","data":{"data":"'+tmp_cmd_monitor.replace('\r',"")+'"}}')
         return tmp_l
 
 
