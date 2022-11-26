@@ -33,32 +33,34 @@ class _port_manager():
   to_melfa=""
   melfa_t_line=""
   # ,"1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"
-  melfa_cmds_monitor=["1;-1;JPOSF\r",]
-  
+  # melfa_cmds_monitor=["1;-1;JPOSF\r\n"]
+  melfa_cmds_monitor=["1;-1;JPOSF\r"]
   # melfa_cmds_monitor=["1;1;STATE\r","1;-1;PPOSF\r","1;1;ERRORRD<;0\r","1;-1;JPOSF\r","1;1;ERRORRD<;0\r","1;-1;GPPOSF\r","1;1;ERRORRD<;0\r","1;-1;GJPOSF\r","1;1;ERRORRD<;0\r"]
-  melfa_MonitorCommand="1;1;STATE\r"
+  melfa_MonitorCommand="1;-1;JPOSF\r\n"
   # melfa_cmds_pos_monitor=["1;-1;PPOSF\r","1;-1;JPOSF\r","1;-1;GPPOSF\r","1;-1;GJPOSF\r"]
   # Remote_user_line=""
   dtm_rcv=False
   dtru_rcv=False
   dtu_rcv=False
   is_monitor=False
-  from_melfa_queue=Queue(maxsize=5)
+  from_melfa_queue=Queue(maxsize=10)
   to_melfa_queue=Queue(maxsize=5)
-  
+  from_DT_queue=Queue(maxsize=10)
 #Use Mutex Lock for Race Condition
   lock=Lock()
   User_timeout=0.01 #0.001
   timeout=0.04     #0.04
-  writeTimeout=0.1
+  writeTimeout=1
   User_writeTimeout=30 #30
-  MonitorTime=0.5
-  delay_starvation=0.5
+  MonitorTime=0.1
+  delay_starvation=0.01
   starter=5
   baudrate=9600
   thread_stop=False
   DU_Idle=True
   remote_user_rcv=False
+  flag_isMonitor=False
+  flag_isCOM=False
   counter_m=0
   def put_to_queue(self,msg):
        self.to_melfa_queue.put(msg) 
@@ -84,8 +86,8 @@ class _port_manager():
       if (pMelfa==""):
         return "Select Robot Port First!"
       if (pMelfa==pUser):
-        
-        return "Robot port and Direct-User port cannot \nbe the same ! "
+
+         return "Robot port and Direct-User port cannot \nbe the same ! "
       else:
          self.ports_user=pUser
          self.ports_melfa=pMelfa
@@ -101,70 +103,103 @@ class _port_manager():
       # self.Mthread.start()
       self.Mthread=threading.Thread(target=self.new_melfa_read_line_method)
       self.Mthread.start()
-      # !!!
       self.Uthread=threading.Thread(target=self.thread_user)
       self.Uthread.start()
       # self.Mthread_delay=threading.Thread(target=self.thread_delay_monitor)
       # self.Mthread_delay.start()
-      # self.Mthread_Ch_delay=threading.Thread(target=self.thread_Remote_monitor)
-      # self.Mthread_Ch_delay.start()
+      if(self.flag_isMonitor):
+       self.Mthread_Ch_delay=threading.Thread(target=self.thread_Remote_monitor)
+       self.Mthread_Ch_delay.start()
       return "Melfa port is connected"
     else: 
       #just connect both
       self.start_melfa_port()
       self.start_user_port()
-      self.Mthread=threading.Thread(target=self.thread_melfa)
-      self.Mthread.start()
-      self.Uthread=threading.Thread(target=self.thread_user)
-      self.Uthread.start()
-      # self.Mthread_delay=threading.Thread(target=self.thread_delay_monitor)
-      # self.Mthread_delay.start()
+
+      if(self.flag_isCOM):
+       self.Mthread=threading.Thread(target=self.new_melfa_read_line_method)
+       self.Mthread.start()
+       self.DTUthread=threading.Thread(target=self.thread_DT_user)
+       self.DTUthread.start()
+      
+       if(self.flag_isMonitor):
+        self.Mthread_Ch_delay=threading.Thread(target=self.thread_Remote_monitor)
+        self.Mthread_Ch_delay.start()
+      else:
+       self.Mthread=threading.Thread(target=self.thread_melfa)
+       self.Mthread.start()
+       self.Uthread=threading.Thread(target=self.thread_user)
+       self.Uthread.start()
+      if(self.flag_isMonitor):
+       self.Mthread_delay=threading.Thread(target=self.thread_delay_monitor)
+       self.Mthread_delay.start()
       #start reading and writing ...
-      return "Melfa and Direct-user ports are connected"
+      if(self.flag_isCOM):
+       return "Melfa and Digital Twin ports are connected"
+      else:
+       return "Melfa and Direct-user ports are connected"
 
 
   def thread_melfa(self):
+   line = []
+   seq = []
+   count = 1
    while True:
 
     if self.thread_stop:
         break
     else:
-    
-      # self.lock.acquire()
-      rcv=self.melfa_serial.readline()
+       for c in self.melfa_serial.read(9600):
+        line.append(chr(c)) #convert from ANSII
+        L_line = ''.join(str(v) for v in line) #Make a string from array
+        if chr(c) == '\r':
+            print(L_line)
+            self.melfa_line=L_line
+            self.user_serial.write(L_line.encode("UTF-8"))
+            if(L_line!="QoK"):
+             self.from_melfa_queue.put(L_line)
+            self.melfa_t_line=L_line
+          # self.lock.release()
+          # self.melfa_t_line=rcv.decode("UTF-8")
+            self.dtm_rcv=False
+            line = []
+            self.melfa_serial.flush()
+            break
+      # # self.lock.acquire()
+      # rcv=self.melfa_serial.readline()
      
-      # rcv=self.melfa_serial.read_all()
-      # rcv=self.melfa_serial.read_until()
-      # rcv=self.melfa_serial.read(8)
-      rcv_txt=rcv.decode("UTF-8") 
-      # print(rcv)
-      # self.lock.release()
-      if(rcv_txt!=""):
-        print(rcv)
-        if(self.ports_user==""):
-          self.dtm_rcv=True
+      # # rcv=self.melfa_serial.read_all()
+      # # rcv=self.melfa_serial.read_until()
+      # # rcv=self.melfa_serial.read(8)
+      # rcv_txt=rcv.decode("UTF-8") 
+      # # print(rcv)
+      # # self.lock.release()
+      # if(rcv_txt!=""):
+      #   print(rcv)
+      #   if(self.ports_user==""):
+      #     self.dtm_rcv=True
 
-          # self.lock.acquire()
-          self.melfa_line=rcv.decode("UTF-8")
-          self.from_melfa_queue.put(rcv.decode("UTF-8"))
-          # print(rcv_txt)
-          # self.user_serial.write(rcv)
-          self.melfa_t_line=rcv_txt
-          # self.lock.release()
-          # self.melfa_t_line=rcv.decode("UTF-8")
-          self.dtm_rcv=False
-        else:
-          self.dtm_rcv=True
+      #     # self.lock.acquire()
+      #     self.melfa_line=rcv.decode("UTF-8")
+      #     self.from_melfa_queue.put(rcv.decode("UTF-8"))
+      #     # print(rcv_txt)
+      #     # self.user_serial.write(rcv)
+      #     self.melfa_t_line=rcv_txt
+      #     # self.lock.release()
+      #     # self.melfa_t_line=rcv.decode("UTF-8")
+      #     self.dtm_rcv=False
+      #   else:
+      #     self.dtm_rcv=True
 
-          # self.lock.acquire()
-          self.melfa_line=rcv.decode("UTF-8")
-          self.from_melfa_queue.put(rcv.decode("UTF-8"))
-          self.user_serial.write(rcv)
-          self.melfa_t_line=rcv_txt
+      #     # self.lock.acquire()
+      #     self.melfa_line=rcv.decode("UTF-8")
+      #     self.from_melfa_queue.put(rcv.decode("UTF-8"))
+      #     self.user_serial.write(rcv)
+      #     self.melfa_t_line=rcv_txt
           
-          # self.lock.release()
-          # self.melfa_t_line=rcv.decode("UTF-8")
-          self.dtm_rcv=False
+      #     # self.lock.release()
+      #     # self.melfa_t_line=rcv.decode("UTF-8")
+      #     self.dtm_rcv=False
           
       # self.lock.release()
 
@@ -211,19 +246,24 @@ class _port_manager():
          for x in self.melfa_cmds_monitor:
            self.melfa_serial.write(x.encode("UTF-8"))
     
-     else: 
+     else:
       # Remote User
-         time.sleep(self.User_timeout)
-         if not self.to_melfa_queue.empty() :
+       
+         time.sleep(self.User_timeout*10)
+         if not self.to_melfa_queue.empty()  :
               rcvv=self.to_melfa_queue.get()
               self.dtru_rcv=True
         # Write it On Melfa line
               self.user_line=rcv_txt  
               self.melfa_serial.write(rcvv.encode("UTF-8"))
+            
               # print("In if:")
               # print(rcvv.encode("UTF-8"))
               # time.sleep(0.005)
               self.dtru_rcv=False
+       
+        #  self.melfa_serial.write(self.melfa_MonitorCommand.encode("UTF-8"))
+      
          else:
           #  time.sleep(self.timeout)
            if self.is_monitor:
@@ -256,7 +296,7 @@ class _port_manager():
   #         #  self.melfa_serial.write(x.encode("UTF-8"))
          
        
-                  
+            
   def thread_Remote_monitor(self):
     time.sleep(self.starter)
     self.melfa_MonitorCommand="1;1;STATE\r"
@@ -270,7 +310,7 @@ class _port_manager():
            
            self.melfa_MonitorCommand=x
            print(x)
-          #  time.sleep(self.delay_starvation)
+           time.sleep(self.delay_starvation)
            
            self.is_monitor=True 
           
@@ -290,6 +330,9 @@ class _port_manager():
       # for x in self.melfa_cmds_monitor:
       #   self.melfa_MonitorCommand=x
       #   time.sleep(1) 
+      if self.dtu_rcv:
+        time.sleep(5) 
+    
       if not self.is_monitor and not self.dtu_rcv:
           self.is_monitor=True
 
@@ -327,7 +370,7 @@ class _port_manager():
       #       line = []
       #       break
  
-     for c in self.melfa_serial.read(8):
+     for c in self.melfa_serial.read(9600):
         line.append(chr(c)) #convert from ANSII
         L_line = ''.join(str(v) for v in line) #Make a string from array
         if chr(c) == '\r':
@@ -344,6 +387,29 @@ class _port_manager():
             break
 
 
+  def thread_DT_user(self):
+   if self.ports_user=="":
+      flag_du=False
+   else:
+      flag_du=True
+   while True:
+    if self.thread_stop:
+      if flag_du:
+       self.user_serial.close()
+      break
+    else:
+      rcv=self.user_serial.readline()
+     
+      rcv_txt=rcv.decode("UTF-8") 
+      self.from_DT_queue.put(rcv_txt)
+      if(rcv_txt!="" ):
+        
+        self.melfa_serial.write(rcv)
+      else:
+          if self.is_monitor:
+            self.is_monitor=False
+            self.melfa_serial.write(self.melfa_MonitorCommand.encode("UTF-8"))
+   
 
 
 

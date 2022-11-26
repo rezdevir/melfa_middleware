@@ -90,21 +90,41 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           self.label_portr_name.move(30,70)
           # user label
           self.label_portu=QtWidgets.QLabel(self)
-          self.label_portu.setText("Select User Port")
+          self.label_portu.setText("Select Port")
           self.label_portu.move(500,10)
           #User CheckBox
           self.check_user=QtWidgets.QCheckBox("direct user?",self)
           self.check_user.stateChanged.connect(self.btncheck)
           self.check_user.move(410,40)
+
+          #######
+          #Use RS232 To Communicate CheckBox
+          self.check_user_com=QtWidgets.QCheckBox("DT COM",self)
+          self.check_user_com.stateChanged.connect(self.btncheck_COM)
+          self.check_user_com.move(410,60)
+          #######
+
+          #Monitor CheckBox
+          self.check_monitor=QtWidgets.QCheckBox("Is Monitoing?",self)
+          self.check_monitor.stateChanged.connect(self.btncheck_Monitor)
+          self.check_monitor.move(150,40)
           # User Port
           self.list_portsu=QtWidgets.QListWidget(self)
           self.list_portsu.move(500,40)
           self.list_portsu.addItems(lists_ports)
           self.list_portsu.clicked.connect(self.clickedu)
           self.list_portsu.setEnabled(False)
+          ####
+          # DT Port
+          # self.list_portsDT=QtWidgets.QListWidget(self)
+          # self.list_portsDT.move(500,80)
+          # self.list_portsDT.addItems(lists_ports)
+          # self.list_portsDT.clicked.connect(self.clickedu)
+          # self.list_portsDT.setEnabled(False)
+          ####
           # User label port name <---------------- Here
           self.label_portu_name=QtWidgets.QLabel(self)
-          self.label_portu_name.setText("User Port")
+          self.label_portu_name.setText("Port")
           self.label_portu_name.move(500,70)
           #Connection ListVIew
           self.list_connection_command=QtWidgets.QListWidget(self)
@@ -172,10 +192,37 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
             # print (" is selected")
             # self.direct_user=True
             self.list_portsu.setEnabled(True)
+            self.label_portu.setText("Select User Port")
+            self.check_user_com.setEnabled(False)
          else:
             # print (" is deselected")
             # self.direct_user=False 
             self.list_portsu.setEnabled(False)
+            self.label_portu_name.setText("Port")
+            self.check_user_com.setEnabled(True)
+     
+    def btncheck_Monitor(self,state):
+    
+         if state == QtCore.Qt.Checked:
+            self.flag_isMonitor=True
+            
+            
+         else:
+            self.flag_isMonitor=False
+          
+     
+    def btncheck_COM(self,state):
+    
+         if state == QtCore.Qt.Checked:
+            self.flag_isCOM=True
+            self.check_user.setEnabled(False)
+            self.list_portsu.setEnabled(True)
+            self.label_portu.setText("Select DT Port")
+         else:
+            self.flag_isCOM=False
+            self.check_user.setEnabled(True)
+            self.list_portsu.setEnabled(False)
+            self.label_portu_name.setText("Port")
     def btncheck_terminal(self,state):
     
          if state == QtCore.Qt.Checked:
@@ -185,7 +232,7 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
             self.flag_terminal=False
 
     def btnstart(self):
-   
+      
      if self.ports_melfa=="":
         self.label_state.setText("First choose Robo port please!")
      else:
@@ -193,8 +240,10 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
         self.btn_refresh.setEnabled(False)
         self.btn_start.setEnabled(False)
         self.check_user.setEnabled(False)
+        self.check_user_com.setEnabled(False)
         self.list_portsr.setEnabled(False)
         self.list_portsu.setEnabled(False)
+        self.check_monitor.setEnabled(False)
         #make connection and do stuff ...
         self.thread_stop=False
         self.flag_stop=False
@@ -210,10 +259,10 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
          self.start_mqtt()
         except:
          self.msg=self.msg+"\nMQTT Cannot Connectet to broker!"
-     
         # start operation
         self.op_start()
         self.label_state.setText(self.msg)
+
     def btnstop(self):
       self.thread_stop=True
       self.flag_stop=True
@@ -259,20 +308,24 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
     def op_start(self):
        monitor_operator_thread=threading.Thread(target=self.thread_monitor_pub)
        monitor_operator_thread.start()
+       if self.flag_isCOM:
+        Check_DT_thread=threading.Thread(target=self.thread_Check_DT)
+        Check_DT_thread.start()
+        operator_thread=threading.Thread(target=self.thread_sub_op)
+        operator_thread.start()
        if self.ports_user=="":
         self.du_state=False
         operator_thread=threading.Thread(target=self.thread_sub_op)
         operator_thread.start()
        else: 
         self.du_state=True
-
+    
     def thread_sub_op(self):
-      
         while True:
             if self.flag_stop:
               break
             if self.cmds !=[]:
-               if not self.du_state:
+               if not self.du_state or self.flag_isCOM:
                 self.remote_user_rcv=True
                 self.command_2_port(self.cmds)
                 self.remote_user_rcv=False
@@ -287,7 +340,16 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
 
              
              
-            
+    def thread_Check_DT(self):
+      while True:
+        if self.flag_stop:
+          break     
+        time.sleep(0.04)
+        if not self.from_DT_queue.empty():
+         self.dt_to_cmds(self.from_DT_queue.get())
+    
+    
+    
     def thread_monitor_pub(self):
       last_msg=""
       while True:
@@ -303,9 +365,14 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
           # print(self.melfa_line)
           tmp=self.from_melfa_queue.get()
           
+            
           # time.sleep(1)
           json_l=self.extract_cmd(tmp)
+          if(self.flag_isCOM):
+           line=json_l[1]+'\r\n'
+           self.user_serial.write(line.encode("UTF-8"))
           if(json_l[1]!=last_msg):
+      
            last_msg=json_l[1]
           # msg=self.melfa_line
           # print("msg :"+msg)

@@ -158,8 +158,18 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
                 self.Remote_user_line="RU Topic Error"
                 # self.melfa_serial.write(self.Remote_user_line)
                 self.dtru_rcv=True
-             
-      
+   ########     
+       
+   def dt_to_cmds(self,dtMsg):
+        tmpcmd=[]
+        for x in self.list_cmds:
+            tmp=x.get_cmd(dtMsg)
+            if tmp!="":
+              tmpcmd.append(tmp+"\r")
+        return tmpcmd 
+
+   ########
+
    def monitor_fun_switch(self):
              try:
                 self.Remote_user_line="RU-Monitor-->"+self.topic[2]

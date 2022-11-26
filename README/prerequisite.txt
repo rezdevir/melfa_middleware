@@ -1,0 +1,7 @@
+pip install click
+pip install importlib_metadata
+pip install serial
+pip install pyserial
+pip install PySide6
+pip install paho.mqtt
+pip install pandas
