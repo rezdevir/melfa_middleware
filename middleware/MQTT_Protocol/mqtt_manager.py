@@ -2,7 +2,7 @@
 from operator import index
 from re import I
 from MQTT_Protocol.MqttConnect import _Connect as subscribe
-
+from SaveCommandManager import _save
 from time import sleep, perf_counter
 from threading import Thread ,Lock
 import threading
@@ -10,7 +10,7 @@ from ast import Break
 from multiprocessing import Event, Lock
 from message_manager import message_interpreter as message_interpreter
 import time
-
+import datetime
 service_topic= "melfa/service/#"
 control_topic= "melfa/control/#"
 
@@ -18,7 +18,7 @@ control_topic= "melfa/control/#"
 class mymqtt(subscribe,message_interpreter):
 
     Remote_user_line=""
-    
+   
     def start_mqtt(self):
      
       self.client = self.connect_mqtt()
@@ -37,17 +37,18 @@ class mymqtt(subscribe,message_interpreter):
 
 
     def publish(self,topic,msg,qos,delay_time):
-        msg_count = 0
+        # msg_count = 0
         time.sleep(delay_time)
-        msgs = f"{msg}: {msg_count}"
+        # msgs = f"{msg}: {msg_count}"
         result = self.client.publish(topic, msg,qos)
         # result: [0, 1]
         status = result[0]
         if status == 0:
-            print(f"Send `{msgs}` to topic `{topic}`")
+            print(datetime.datetime.now().isoformat()+" : "+msg)
+            # print(f"Send `{msg}` to topic `{topic}`")
         else:
             print(f"Failed to send message to topic {topic}")
-        msg_count += 1
+        # msg_count += 1
 
 
 

@@ -1,7 +1,9 @@
 class _save():
-
- file=open('command.txt',"w")
+ isTraceFile=False
+ file=open('TraceFile.txt',"w")
+  
  def save(self,line):
-  self.file.write(line)
- def close(self):
+  if (self.isTraceFile):
+   self.file.write(line)
+ def close_save(self):
   self.close()

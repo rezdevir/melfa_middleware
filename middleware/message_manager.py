@@ -94,12 +94,13 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
    cmds=[]
    list_cmds=[]
    du_state=False
-
+   toooopic=""
    def interpreter(self,msg):
     if not self.du_state:
    
        tmp_topic=msg.topic
        self.payload=msg.payload.decode("utf-8")
+       self.toooopic=tmp_topic
     #    tmp_topic=msg
        self.str_topic=tmp_topic
        indexer=0
