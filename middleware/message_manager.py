@@ -20,7 +20,30 @@ class _command():
             return self.topic
         else:
             return ""
-
+class roboProgramm():
+   def __init__(self,type,programm):
+    self.type=type
+    self.programms=programm
+   def getJson(self):
+        if self.programms is not NULL:
+         return  json.dumps(self.__dict__)
+   def isEmpty_(self):
+        if self.programms is not NULL:
+            return False
+        else :
+            return True
+class n_roboProgramm():
+   def __init__(self,type,num):
+    self.type=type
+    self.num=num
+   def getJson(self):
+        if self.num is not NULL:
+         return  json.dumps(self.__dict__)
+   def isEmpty_(self):
+        if self.num is not NULL:
+            return False
+        else :
+            return True
 class _PPOSF():  
     # type="PPOSF"
     # state="state"
@@ -188,6 +211,9 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
         for x in self.list_cmds:
             tmp=x.get_cmd(self.topic[2])
             if tmp!="":
+             if(tmp=="runP"):
+              tmpcmd=self.runProgram(self.payload)
+     
              if(tmp=="testprgrm:="):
                   tmpcmd= self.program2code(self.topic[3],self.payload)
                     # tmpcmd.append(tmp+self.topic[3]+self.payload+"\r")
@@ -199,7 +225,12 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
                   tmpcmd.append(tmp+"\r")
                  
         return tmpcmd
-
+   def runProgram(self,name):
+       tmpcmd=[]
+       command=["1;1;CNTLON\r","1;1;RUN"+name+";1\r","1;1;CNTLOFF\r"]
+       for x in command:
+        tmpcmd.append(x)
+       return tmpcmd
    def program2code(self,name,code):
     tmpcmd=[]
     c=1
@@ -229,6 +260,33 @@ class message_interpreter(message,_command,_PPOSF,_JPOSF):
       # PPOSF(state)
     setOrgin1=tmp_cmd_monitor.find("X;****;")
     setOrgin2=tmp_cmd_monitor.find("J1;****;")
+    mb4l=re.findall(".MB4?", tmp_cmd_monitor)
+    if mb4l!=[]:
+      similen=len(re.findall(";", tmp_cmd_monitor))
+      if(similen ==12):
+       xcunt=0
+       for x in range(len(tmp_cmd_monitor)):
+        if (tmp_cmd_monitor[x]== ";"):
+          xcunt=xcunt+1
+          if (xcunt==4):
+            nprogramm=n_roboProgramm("programNumber",int(tmp_cmd_monitor[x-1]))
+            tmp_l=[]
+            tmp_l.append("programNumber")
+            tmp_l.append(nprogramm.getJson())
+            return tmp_l
+      elif(similen==10):
+           pnamel=re.findall("Qo[kK]([A-Z]+[a-z]?).MB4", tmp_cmd_monitor)
+           print(pnamel)
+           if pnamel!=[]:
+            pnamee=pnamel[0]
+            nprogramm=roboProgramm("programName",pnamee)
+            tmp_l=[]
+            tmp_l.append("programName")
+            tmp_l.append(nprogramm.getJson())
+            return tmp_l
+      # PPOSF(x)
+      # print(x)
+
     xl=re.findall("X;([-]?\\d.*?);", tmp_cmd_monitor)
     if xl!=[]:
       x=float(xl[0])

@@ -365,31 +365,35 @@ class mWindow(QMainWindow,_port_manager,_save,mqtt,interpreter):
          self.save(datetime.datetime.now().isoformat()+" : "+tmp+" From DT: "+"\n")
     
     
-    
+   
     def thread_monitor_pub(self):
       last_msg=""
       while True:
         if self.flag_stop:
           break
-
         time.sleep(0.001)
-
         if not self.from_melfa_queue.empty() :
-          # extract value from melfa response ...
+          # extract value from melfa response ... 
           tmp=self.from_melfa_queue.get()
           self.save(datetime.datetime.now().isoformat()+" : "+"Extraction Start :"+tmp+"\n")
           json_l=self.extract_cmd(tmp)
           self.save(datetime.datetime.now().isoformat()+" : "+"Extraction END."+"\n")
           if(self.flag_isCOM):
            line=json_l[1]+'\r\n'
-           self.user_serial.write(line.encode("UTF-8"))
            self.save(datetime.datetime.now().isoformat()+" : "+json_l[1]+"To DT From COM"+"\n")
+           self.user_serial.write(line.encode("UTF-8"))
           if(json_l[1]!=last_msg):
-      
            last_msg=json_l[1]
-
            if json_l[0]=="JPOSF":
              self.publish("melfa/monitor/"+json_l[0],json_l[1],0,0.001)
+             self.save(datetime.datetime.now().isoformat()+" : "+"Publish "+json_l[0]+json_l[1]+"\n")
+             self.melfa_line=""
+           elif json_l[0]=="programNumber":
+             self.publish("melfa/monitor/"+json_l[0],json_l[1],2,0.001)
+             self.save(datetime.datetime.now().isoformat()+" : "+"Publish "+json_l[0]+json_l[1]+"\n")
+             self.melfa_line=""
+           elif json_l[0]=="programName":
+             self.publish("melfa/monitor/"+json_l[0],json_l[1],2,0.001)
              self.save(datetime.datetime.now().isoformat()+" : "+"Publish "+json_l[0]+json_l[1]+"\n")
              self.melfa_line=""
 

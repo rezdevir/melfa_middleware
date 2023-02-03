@@ -11,6 +11,7 @@ class _Connect():
     # broker = 'broker.emqx.io'
     # port = 8083
     broker='192.168.247.128'
+    # port=8443
     port=1883
     # generate client ID with pub prefix randomly
     client_id = f'python-mqtt-{random.randint(0, 100)}'
@@ -22,8 +23,8 @@ class _Connect():
             print("Connected to MQTT Broker !")
         else:
             print("Failed to connect, return code %d\n", rc)
-
-     client = mqtt_client.Client(self.client_id,transport='tcp')
+     client = mqtt_client.Client(self.client_id,transport="tcp")
+    #  client = mqtt_client.Client(self.client_id,transport="websockets")
      client.username_pw_set(self.username, self.password)
      client.on_connect = on_connect
      client.connect(self.broker, self.port)

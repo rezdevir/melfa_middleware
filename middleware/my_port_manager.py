@@ -50,7 +50,7 @@ class _port_manager(_save):
   writeTimeout=1
   User_writeTimeout=30 #30
   MonitorTime=0.1
-  delay_starvation=0.2
+  delay_starvation=0.208
   starter=5
   baudrate=9600
   thread_stop=False

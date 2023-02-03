@@ -1,5 +1,5 @@
 class _save():
- isTraceFile=False
+ isTraceFile=True
  file=open('TraceFile.txt',"w")
   
  def save(self,line):

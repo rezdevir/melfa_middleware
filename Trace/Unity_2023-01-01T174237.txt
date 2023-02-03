@@ -1,0 +1,1636 @@
+2023-01-01 17:42:48.427 : Start
+UnityEngine.Debug:Log (object)
+MQTT_Manager:Start () (at Assets/MQTT/MQTT_Manager.cs:27)
+
+Connecting to broker on 192.168.247.128:1883...
+
+UnityEngine.Debug:LogFormat (string,object[])
+M2MqttUnity.M2MqttUnityClient:OnConnecting () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:112)
+MQTT_Manager:OnConnecting () (at Assets/MQTT/MQTT_Manager.cs:52)
+M2MqttUnity.M2MqttUnityClient/<DoConnect>d__41:MoveNext () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:308)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+2023-01-01 17:42:49.984Connecting to broker on 192.168.247.128:1883...
+
+UnityEngine.Debug:Log (object)
+MQTT_Manager:OnConnecting () (at Assets/MQTT/MQTT_Manager.cs:53)
+M2MqttUnity.M2MqttUnityClient/<DoConnect>d__41:MoveNext () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:308)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+Connected to 192.168.247.128:1883...
+
+UnityEngine.Debug:LogFormat (string,object[])
+M2MqttUnity.M2MqttUnityClient:OnConnected () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:120)
+MQTT_Manager:OnConnected () (at Assets/MQTT/MQTT_Manager.cs:59)
+M2MqttUnity.M2MqttUnityClient/<DoConnect>d__41:MoveNext () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:333)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+2023-01-01 17:42:50.406Connected to broker on 192.168.247.128
+
+UnityEngine.Debug:Log (object)
+MQTT_Manager:OnConnected () (at Assets/MQTT/MQTT_Manager.cs:60)
+M2MqttUnity.M2MqttUnityClient/<DoConnect>d__41:MoveNext () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:333)
+UnityEngine.GUIUtility:ProcessEvent (int,intptr,bool&)
+
+2023-01-01 17:42:52.648j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.668{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.687{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.707{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.724{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.742{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.761{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.778{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.797{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.817{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.835{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.854{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.873{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.893{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.913{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.930{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.948{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.967{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:52.985{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.003{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.022{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.040{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.057{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.075{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.093{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.111{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.129{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.148{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.165{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.184{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.202{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.219{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.238{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.256{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.273{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.292{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.311{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.330{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.349{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.366{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.533{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.698{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:53.928{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:54.150{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:54.366{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:54.603{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:54.777{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:55.028{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:55.244{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:55.511{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:55.668{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:55.872{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:56.155{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:56.282{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:56.503{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.19, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:56.740{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:56.944 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:57.025{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 25.22, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:57.120{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 26.24, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:57.231 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 26.24, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:57.367{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 28.16, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:57.483 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 28.16, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:57.854{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 30.97, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:57.919 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 30.97, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:58.073{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 34.74, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:58.148 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 34.74, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:58.293{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 35.72, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:58.455 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 35.72, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:58.526{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 35.78, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:58.624 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 35.78, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:58.698{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 35.78, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:58.995{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 34.76, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:59.051 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 34.76, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:59.168{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 33.17, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:59.238 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 33.17, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:59.338{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 32.38, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:59.434 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 32.38, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:59.652{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 32.49, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:59.774 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 32.49, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:42:59.779{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 32.51, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:42:59.843 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.65, "j2": 32.51, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:00.050{"type": "JPOSF", "state": "QoK", "j1": -3.04, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:00.115 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -3.04, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:00.206{"type": "JPOSF", "state": "QoK", "j1": -0.17, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:00.220 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -0.17, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:00.467{"type": "JPOSF", "state": "QoK", "j1": 2.86, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:00.555 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": 2.86, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:00.672{"type": "JPOSF", "state": "QoK", "j1": 2.78, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:00.745 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": 2.78, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:00.887{"type": "JPOSF", "state": "QoK", "j1": -0.1, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:00.991 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -0.1, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:01.119{"type": "JPOSF", "state": "QoK", "j1": -1.89, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:01.203 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.89, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:01.288{"type": "JPOSF", "state": "QoK", "j1": -1.98, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:01.378 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.98, "j2": 32.52, "j3": 129.61, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:01.541{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 127.81, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:01.662 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 127.81, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:01.705{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 125.68, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:01.807 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 125.68, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:01.930{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 122.53, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:02.034 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 122.53, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:02.149{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 119.46, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:02.248 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 119.46, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:02.385{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 116.1, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:02.445 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 116.1, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:02.589{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 113.7, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:02.625 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 113.7, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:02.809{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 110.82, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:02.840 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 110.82, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:03.024{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 107.55, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:03.116 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 107.55, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:03.203{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 105.73, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:03.217 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 105.73, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:03.481{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 101.6, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:03.588 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 101.6, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:03.656{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 99.2, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:03.725 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 99.2, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:03.888{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 96.13, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:03.938 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 96.13, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:04.094{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 93.34, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:04.205 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 93.34, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:04.297{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 90.37, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:04.349 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 90.37, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:04.498{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 87.68, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:04.552 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 87.68, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:04.746{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 84.92, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:04.920{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 84.18, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:04.924 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 84.92, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:05.000 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 84.18, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:05.129{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 86.26, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:05.162 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 86.26, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:05.386{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 89.17, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:05.456 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 89.17, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:05.591{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 92.05, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:05.713 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 92.05, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:05.775{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 94.83, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:05.861 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 94.83, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:06.087{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 98.96, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:06.150 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 98.96, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:06.226{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 100.88, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:06.279 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 100.88, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:06.448{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 103.86, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:06.482 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 103.86, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:06.635{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 106.35, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:06.701 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 106.35, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:06.837{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 109.14, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:06.887 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 109.14, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:07.088{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 112.5, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:07.204 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 112.5, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:07.262{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 114.99, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:07.322 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 114.99, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:07.511{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 118.16, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:07.615 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 118.16, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:07.760{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 121.33, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:07.819 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 121.33, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:07.952{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 124.5, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:08.112 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 124.5, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:08.230{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 127.47, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:08.280 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 127.47, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:08.408{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 130.64, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:08.446 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 130.64, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:08.674{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 133.62, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:08.797 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 133.62, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:08.870{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 136.4, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:09.011 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 136.4, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:09.048{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.67, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:09.100 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.67, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:09.330{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.86, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:09.413 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.86, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:09.515{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:09.555 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:09.686{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:09.935{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:10.125{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:10.396{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:10.567{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:10.770{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:10.992{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:11.196{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:11.414{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:11.696{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 32.52, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:11.870{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 33.83, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:11.923 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 33.83, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:12.109{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 35.39, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:12.225 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 35.39, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:12.284{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 37.24, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:12.354 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 37.24, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:12.547{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 39.8, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:12.615 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 39.8, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:12.719{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 41.46, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:12.767 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 41.46, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:12.909{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 42.9, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:12.961 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 42.9, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:13.188{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 42.87, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:13.274 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 42.87, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:13.330{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 41.94, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:13.382 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.99, "j2": 41.94, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:13.612{"type": "JPOSF", "state": "QoK", "j1": -2.78, "j2": 40.99, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:13.693 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.78, "j2": 40.99, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:13.767{"type": "JPOSF", "state": "QoK", "j1": -5.22, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:13.851 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -5.22, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:14.142{"type": "JPOSF", "state": "QoK", "j1": -9.37, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:14.234 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -9.37, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:14.349{"type": "JPOSF", "state": "QoK", "j1": -7.37, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:14.489 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -7.37, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:14.546{"type": "JPOSF", "state": "QoK", "j1": -5.11, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:14.666 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -5.11, "j2": 40.97, "j3": 137.48, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:14.851{"type": "JPOSF", "state": "QoK", "j1": -4.94, "j2": 40.97, "j3": 138.06, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:14.941 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.94, "j2": 40.97, "j3": 138.06, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:15.040{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 40.97, "j3": 138.41, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:15.161 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 40.97, "j3": 138.41, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:15.243{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 40.97, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:15.320 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 40.97, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:15.445{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 40.97, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:15.664{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 41.76, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:15.708 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 41.76, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:15.896{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 43.51, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:15.952 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 43.51, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:16.083{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 43.75, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:16.185 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 43.75, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:16.286{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:16.370 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.93, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:16.537{"type": "JPOSF", "state": "QoK", "j1": -4.23, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:16.602 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -4.23, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:16.769{"type": "JPOSF", "state": "QoK", "j1": -1.08, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:16.896 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -1.08, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:16.960{"type": "JPOSF", "state": "QoK", "j1": 2.13, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:16.996 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": 2.13, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:17.193{"type": "JPOSF", "state": "QoK", "j1": 2.47, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:17.358 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": 2.47, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:17.399{"type": "JPOSF", "state": "QoK", "j1": -0.26, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:17.472 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -0.26, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:17.587{"type": "JPOSF", "state": "QoK", "j1": -2.07, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:17.635 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.07, "j2": 43.78, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:17.885{"type": "JPOSF", "state": "QoK", "j1": -2.36, "j2": 42.7, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:17.982 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.36, "j2": 42.7, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:18.043{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 40.97, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:18.127 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 40.97, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:18.232{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 39.12, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:18.388 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 39.12, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:18.453{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.76, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:18.522 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.76, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:18.671{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.73, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:18.760 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.73, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:18.859{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.73, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:19.062{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.73, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:19.296{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:19.366 : melfa/monitor/JPOSF|{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+MQTT_Manager:DecodeMessage (string,byte[]) (at Assets/MQTT/MQTT_Manager.cs:101)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttMessageBackgroundQueue () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:238)
+M2MqttUnity.M2MqttUnityClient:ProcessMqttEvents () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:222)
+M2MqttUnity.M2MqttUnityClient:Update () (at Assets/MQTT/M2MqttUnity/Scripts/M2MqttUnityClient.cs:215)
+MQTT_Manager:Update () (at Assets/MQTT/MQTT_Manager.cs:157)
+
+2023-01-01 17:43:19.485{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:19.688{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:19.892{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:20.141{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:20.410{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:20.649{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:20.838{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:21.057{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:21.282{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:21.470{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:21.643{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:21.905{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:22.078{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:22.320{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:22.504{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:22.755{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:22.940{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:23.126{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
+2023-01-01 17:43:23.404{"type": "JPOSF", "state": "QoK", "j1": -2.37, "j2": 38.72, "j3": 138.44, "j4": 4.2, "j5": -5.13, "j6": 93.06, "ovrd": ""}
+UnityEngine.Debug:Log (object)
+PortConnection:ReadingFromPort () (at Assets/Script/DirectRS232Connection/PortConnection.cs:69)
+System.Threading.ThreadHelper:ThreadStart ()
+
